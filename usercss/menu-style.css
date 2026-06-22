@@ -1,0 +1,210 @@
+@charset "utf-8";
+
+/* Navigation Bar Styling System */
+#MenuControl {
+    height: 72px !important;
+    float: right;
+    display: flex;
+    align-items: center;
+    z-index: 9999999 !important;
+}
+
+#MenuControl_C {
+    overflow: visible !important;
+    border: none !important;
+    width: 100%;
+}
+
+.navbar {
+    background: transparent !important;
+    padding: 0 !important;
+    transition: var(--transition-smooth);
+}
+
+.navbar-nav {
+    gap: 8px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    color: var(--primary-color) !important;
+    padding: 10px 20px !important;
+    border-radius: 4px;
+    transition: var(--transition-smooth);
+}
+
+/* White text for hero section compatibility when header is not scrolled */
+body.intro-head-active header.smart-header:not(.scrolled) .nav-link {
+    color: #FFF !important;
+}
+
+/* Dark text for hero section compatibility when header is scrolled */
+body.intro-head-active header.smart-header.scrolled .nav-link {
+    color: var(--primary-color) !important;
+}
+
+/* Normalize Contact Us button styling in navbar to prevent vertical stretching */
+.navbar-nav .btn-premium {
+    padding: 8px 20px !important;
+    font-size: 0.9rem !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    align-self: center !important;
+    margin-left: 10px;
+    height: auto !important;
+    line-height: 1.5 !important;
+}
+
+/* Nav Links hover states */
+.nav-link:hover, .nav-item.show .nav-link {
+    color: var(--primary-accent) !important;
+    background-color: rgba(197, 168, 128, 0.08) !important;
+}
+
+/* Dropdown Menu Overhaul */
+.dropdown-menu {
+    background: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    -webkit-backdrop-filter: var(--glass-blur) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 6px !important;
+    box-shadow: var(--shadow-medium) !important;
+    padding: 12px 8px !important;
+    margin-top: 8px !important;
+    min-width: 240px;
+    animation: dropFade 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dropFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    font-size: 0.9rem !important;
+    font-weight: 500;
+    color: var(--primary-color) !important;
+    padding: 10px 16px !important;
+    border-radius: 4px;
+    transition: var(--transition-smooth);
+}
+
+.dropdown-item:hover {
+    color: var(--primary-color) !important;
+    background-color: var(--primary-accent) !important;
+    padding-left: 20px !important;
+}
+
+/* Caret Customization */
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 6px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid\9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+/* Dropend submenus (nested acts and regulations) */
+.dropend .dropdown-menu {
+    right: 100% !important;
+    left: auto !important;
+    top: 0 !important;
+    margin-top: -8px !important;
+    margin-right: 4px !important;
+}
+
+/* Mobile Toggler */
+.navbar-toggler {
+    border: 1px solid var(--border-color) !important;
+    padding: 8px 12px;
+    outline: none;
+    border-radius: 4px;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(15, 30, 54, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+/* Floating Actions & Utility styles */
+.callus, .whatsapp_btn {
+    box-shadow: var(--shadow-medium) !important;
+    transition: var(--transition-smooth);
+}
+
+.callus:hover, .whatsapp_btn:hover {
+    transform: scale(1.1) translateY(-2px);
+}
+
+/* Responsive Rules */
+@media (min-width: 1024px) {
+    .navbar-nav li:hover > ul.dropdown-menu {
+        display: block !important;
+    }
+}
+
+@media (max-width: 991px) {
+    #MenuControl {
+        float: none !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 12px 0;
+    }
+    
+    .navbar-collapse {
+        background: #FFF;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        padding: 16px;
+        margin-top: 12px;
+        box-shadow: var(--shadow-medium);
+    }
+    
+    .nav-link {
+        color: var(--primary-color) !important;
+    }
+}
+
+/* Transparent header layout rules when at the top of the homepage */
+body.intro-head-active header.smart-header:not(.scrolled) {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* Subpage body padding to compensate for fixed header height */
+body:not(.intro-head-active) {
+    padding-top: 72px !important;
+}
+
+/* Logo toggling between light/dark themes */
+.logo-dark {
+    display: block !important;
+}
+.logo-light {
+    display: none !important;
+}
+
+body.intro-head-active header.smart-header:not(.scrolled) .logo-dark {
+    display: none !important;
+}
+body.intro-head-active header.smart-header:not(.scrolled) .logo-light {
+    display: block !important;
+}

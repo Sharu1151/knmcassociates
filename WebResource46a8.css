@@ -1,0 +1,36 @@
+﻿.RadDock_Default .rdMiddle .rdLeft,
+.RadDock_Default .rdMiddle .rdRight
+{
+	background-image: url('WebResource4ef8.gif?d=uXWzSAmhVVUMXGC-bAk05DM4GY719j0XZu8i7YvprcZ1_eoRgTRwB4OmqDXpLc-tWt7PkRncsGEnSuKvJNWjfZmHhr544ITT5ldD5pL8B8fR_PHidkVokptjK6T_39NhfrsxbtjZUBLYB3KvTbvdYqlEv7DH1SUT7ivzdC26ulA1&amp;t=637927308760000000');
+}
+
+.RadDock_Default .rdTop .rdLeft,
+.RadDock_Default .rdTop .rdRight,
+.RadDock_Default .rdTop .rdCenter,
+.RadDock_Default .rdBottom .rdLeft,
+.RadDock_Default .rdBottom .rdRight,
+.RadDock_Default .rdBottom .rdCenter
+{
+	background-image: url('WebResource1a45.gif?d=9pRlZsGM0_5FXaTHoDaR3EXh1s7aVODOc3zBckTTy2Cpy0oTDYnuldcyJPLGP1tzDYlIfbDYpSnIs8qgn_1pqXyAWsc4LKEn-ey8919sz082nYCl6yuO0KL97pZMRaY2F0CxfRJwPFLrTGRR6WzypHGs1vNBrd1bZKUGZ2QqZUI1&amp;t=637927308760000000');
+}
+
+.RadDock_Default .rdCenter .rdCommands a span
+{
+	background-image: url('WebResource9da7.gif?d=KwmvFQw0nc0whtDohRIdutFYkXk0sinR7-m5kGIylSH7CJ-2ukkbzmRKr5LwPcbsZPoHxSSjRpaCr07WGDWfTVoxT6xDXt7IpLvh3G2WT3b4sNFowwamYFE1Ail01UZNZOVBxf-WlNgir3S_GhFyJJsmmsBxVVnJYezbqv5fGdM1&amp;t=637927308760000000');
+}
+
+.RadDock_Default .rdMiddle .rdCenter,
+.RadDock_Default .rdBottom .rdCenter
+{
+	background-color: #fff;
+}
+
+.RadDock_Default .rdContent
+{
+	color: black;
+}
+
+.RadDock_Default em
+{
+	color: #000;
+}

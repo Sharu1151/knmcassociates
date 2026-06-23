@@ -81,6 +81,17 @@ body.intro-head-active header.smart-header.scrolled .nav-link {
     animation: dropFade 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* Invisible bridge to keep dropdown open when crossing margin-top gap */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: transparent;
+}
+
 @keyframes dropFade {
     from {
         opacity: 0;
@@ -160,6 +171,10 @@ body.intro-head-active header.smart-header.scrolled .nav-link {
 @media (min-width: 992px) {
     .navbar-nav li:hover > ul.dropdown-menu {
         display: block !important;
+    }
+    /* Instantly hide dropdown when mouse leaves the list item to avoid sticky states */
+    .navbar-nav li:not(:hover) > ul.dropdown-menu {
+        display: none !important;
     }
 }
 

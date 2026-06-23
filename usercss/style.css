@@ -37,12 +37,11 @@ body {
     font-family: 'Inter', sans-serif !important;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
 }
 
-body.loaded {
-    opacity: 1;
+body:not(.loaded) {
+    overflow: hidden !important;
+    height: 100vh;
 }
 
 /* Scrollbar Styles */
@@ -485,14 +484,20 @@ input:focus, textarea:focus, select:focus {
 }
 
 /* Responsive Table Styling (Acts, Rules, Rates) */
-.table-responsive, table {
+.table-responsive {
     width: 100% !important;
     margin: 30px 0 !important;
-    border-collapse: collapse !important;
-    border-radius: 6px !important;
-    overflow: hidden !important;
-    box-shadow: var(--shadow-soft) !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
     border: 1px solid var(--border-color) !important;
+    border-radius: 6px !important;
+    box-shadow: var(--shadow-soft) !important;
+}
+
+.table-responsive table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    overflow: hidden !important;
     background: #FFF;
 }
 
@@ -1005,4 +1010,214 @@ tr:hover td {
     color: var(--text-muted) !important;
     margin: 0 !important;
     font-weight: 600;
+}
+
+/* Premium Form Inputs Override */
+.premium-input {
+    background-color: #FFFFFF !important;
+    border: 1px solid rgba(15, 30, 54, 0.15) !important;
+    border-radius: 4px !important;
+    padding: 12px 16px !important;
+    font-size: 0.95rem !important;
+    color: var(--primary-color) !important;
+    transition: var(--transition-smooth) !important;
+    box-shadow: none !important;
+}
+
+.premium-input:focus {
+    border-color: var(--primary-accent) !important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.25) !important;
+    background-color: #FFFFFF !important;
+}
+
+.premium-input::placeholder {
+    color: #999999 !important;
+    opacity: 0.8;
+}
+
+/* Team Page Justified Description Text */
+.tm-pg p:not(.small) {
+    text-align: justify !important;
+}
+
+/* Premium Preloader Style */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f1e36; /* Brand primary dark blue */
+    z-index: 99999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Centered layout box */
+.loader-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Graphic area for spinner and central emblem */
+.loader-graphic {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glowing central logo emblem */
+.loader-logo {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #1a2f4c 0%, #0f1e36 100%);
+    border: 2px solid rgba(197, 168, 128, 0.45);
+    box-shadow: 0 0 25px rgba(197, 168, 128, 0.25), inset 0 0 15px rgba(197, 168, 128, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo-text {
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 800;
+    font-size: 1.65rem;
+    color: #c5a880; /* Gold */
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(197, 168, 128, 0.5);
+    line-height: 1;
+}
+
+/* Concentric dual-ring spinner */
+.spinner-ring {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* Outer ring - rotating clockwise */
+.spinner-ring div:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    border: 3px solid transparent;
+    border-top-color: #c5a880;
+    border-bottom-color: #c5a880;
+    animation: spinner-spin-clockwise 1.6s linear infinite;
+    box-shadow: 0 0 15px rgba(197, 168, 128, 0.15);
+}
+
+/* Inner ring - rotating counter-clockwise */
+.spinner-ring div:nth-child(2) {
+    width: 84px;
+    height: 84px;
+    border: 2.5px solid transparent;
+    border-left-color: #ffffff;
+    border-right-color: #ffffff;
+    animation: spinner-spin-counter 1.2s linear infinite;
+    opacity: 0.8;
+}
+
+/* Premium Typography for text labels */
+.loader-title {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 1.9rem;
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    margin: 12px 0 2px 0;
+    line-height: 1.2;
+    text-indent: 7px; /* Align text exactly due to letter-spacing */
+}
+
+.loader-subtitle {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.8rem;
+    color: #c5a880;
+    font-weight: 600;
+    letter-spacing: 9px;
+    text-transform: uppercase;
+    margin: 0 0 28px 0;
+    text-indent: 9px; /* Align text exactly due to letter-spacing */
+    opacity: 0.95;
+}
+
+/* Smooth glowing linear progress indicator */
+.loader-bar-container {
+    width: 130px;
+    height: 2.5px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.loader-bar {
+    position: absolute;
+    height: 100%;
+    width: 70px;
+    background: linear-gradient(90deg, transparent, #c5a880, transparent);
+    border-radius: 4px;
+    animation: loading-bar-move 1.8s ease-in-out infinite;
+}
+
+.loader-status {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    text-indent: 3.5px;
+    animation: pulse-opacity 2s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes spinner-spin-clockwise {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spinner-spin-counter {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes loading-bar-move {
+    0% { transform: translateX(-100px); }
+    100% { transform: translateX(150px); }
+}
+
+@keyframes pulse-opacity {
+    0%, 100% { opacity: 0.45; }
+    50% { opacity: 1; }
 }

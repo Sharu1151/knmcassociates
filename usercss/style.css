@@ -240,6 +240,13 @@ header, .navbar-fixed-top {
     color: var(--primary-color) !important;
 }
 
+.section-large-title {
+    font-size: 3rem !important;
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--primary-color) !important;
+}
+
 .head-section h2::after {
     content: '';
     display: block;
@@ -251,10 +258,12 @@ header, .navbar-fixed-top {
 }
 
 .service-card {
-    background: #FFF;
-    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(15, 30, 54, 0.05);
     padding: 40px;
-    border-radius: 6px;
+    border-radius: 12px;
     box-shadow: var(--shadow-soft);
     transition: var(--transition-smooth);
     height: 100%;
@@ -263,7 +272,8 @@ header, .navbar-fixed-top {
 .service-card:hover {
     transform: translateY(-6px);
     box-shadow: var(--shadow-medium);
-    border-color: rgba(197, 168, 128, 0.3);
+    border-color: rgba(197, 168, 128, 0.4);
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .service-icon {
@@ -314,17 +324,20 @@ header, .navbar-fixed-top {
 
 .calculator-card {
     position: relative;
-    border-radius: 6px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-soft);
     transition: var(--transition-smooth);
-    border: 1px solid var(--border-color);
-    background: #FFF;
+    border: 1px solid rgba(15, 30, 54, 0.05);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .calculator-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-medium);
+    border-color: rgba(197, 168, 128, 0.3);
 }
 
 .calculator-card img {
@@ -578,7 +591,7 @@ tr:hover td {
     background: radial-gradient(circle, var(--primary-accent) 0%, transparent 80%);
     top: -10%;
     right: 5%;
-    animation: float-sphere 12s infinite alternate ease-in-out;
+    animation: float-bg 20s infinite ease-in-out;
 }
 
 .hero-sphere-2 {
@@ -587,15 +600,18 @@ tr:hover td {
     background: radial-gradient(circle, #0C5A3E 0%, transparent 80%);
     bottom: -5%;
     left: 10%;
-    animation: float-sphere 16s infinite alternate-reverse ease-in-out;
+    animation: float-bg 25s infinite ease-in-out alternate;
 }
 
-@keyframes float-sphere {
+@keyframes float-bg {
     0% {
-        transform: translateY(0) scale(1) rotate(0deg);
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    50% {
+        transform: translate(40px, -60px) scale(1.1) rotate(15deg);
     }
     100% {
-        transform: translateY(-40px) scale(1.15) rotate(30deg);
+        transform: translate(-20px, 20px) scale(0.95) rotate(-15deg);
     }
 }
 

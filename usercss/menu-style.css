@@ -282,6 +282,52 @@ body.intro-head-active header.smart-header.scrolled .nav-link {
     .navbar-collapse .dropdown-item:hover {
         padding-left: 24px !important;
     }
+
+    /* Hero CTA buttons mobile stacking, alignment, and gap fix */
+    .hero-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        margin-top: 24px !important;
+    }
+
+    .hero-actions .btn-premium,
+    .hero-actions .btn-premium-outline {
+        display: inline-block !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        text-align: center !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Dashboard widget metric card mobile layout clipping fix */
+    .dashboard-widget {
+        margin-bottom: 50px !important; /* Extra bottom margin to prevent badge overlap */
+    }
+
+    .floating-metric-card {
+        right: 15px !important; /* Move inward to avoid spilling off screen width */
+        bottom: -25px !important;
+    }
+
+    /* Stats 2x2 layout overrides on mobile */
+    .stat-number {
+        font-size: 2rem !important;
+    }
+
+    .stat-card {
+        padding: 24px 12px !important;
+    }
+
+    .stat-icon {
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 1.1rem !important;
+        margin-bottom: 12px !important;
+    }
 }
 
 /* Transparent header layout rules when at the top of the homepage */

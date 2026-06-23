@@ -26,13 +26,17 @@
     scroll-behavior: smooth;
 }
 
+html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+}
+
 body {
     background-color: var(--bg-primary);
     color: var(--text-main);
     font-family: 'Inter', sans-serif !important;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
     opacity: 0;
     transition: opacity 0.6s ease-in-out;
 }

@@ -212,8 +212,12 @@ body.intro-head-active header.smart-header.scrolled .nav-link {
         width: 100%;
     }
     
-    .nav-link {
-        color: #FFFFFF !important; /* Ensure clear white text visibility on dark background */
+    /* High-specificity override to prevent scrolled desktop header rules from turning mobile links dark blue */
+    .navbar-collapse .nav-link,
+    body.intro-head-active header.smart-header .navbar-collapse .nav-link,
+    body.intro-head-active header.smart-header.scrolled .navbar-collapse .nav-link,
+    body.intro-head-active header.smart-header:not(.scrolled) .navbar-collapse .nav-link {
+        color: #FFFFFF !important;
         width: 100%;
         padding: 12px 16px !important;
         font-weight: 600 !important;
@@ -221,7 +225,12 @@ body.intro-head-active header.smart-header.scrolled .nav-link {
         transition: var(--transition-smooth);
     }
 
-    .nav-link:hover, .nav-item.show .nav-link {
+    .navbar-collapse .nav-link:hover,
+    .navbar-collapse .nav-item.show .nav-link,
+    body.intro-head-active header.smart-header .navbar-collapse .nav-link:hover,
+    body.intro-head-active header.smart-header .navbar-collapse .nav-item.show .nav-link,
+    body.intro-head-active header.smart-header.scrolled .navbar-collapse .nav-link:hover,
+    body.intro-head-active header.smart-header.scrolled .navbar-collapse .nav-item.show .nav-link {
         color: var(--primary-accent) !important;
         background-color: rgba(255, 255, 255, 0.06) !important;
     }

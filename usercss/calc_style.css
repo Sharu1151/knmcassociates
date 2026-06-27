@@ -1,0 +1,124 @@
+@charset "utf-8";
+/* Modernized Calculator Styles for knmcassociates.com */
+
+.heading{font-family: inherit; font-weight:bold; text-align:center; font-size:28px;}
+.heading1{font-family: inherit; text-align:center; font-size:26px;}
+p{ font-family: inherit; font-size: 16px; line-height: 22px; }
+	
+.calc_div {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    padding: 15px 0px;
+    position: relative;
+    background: transparent;
+}
+	
+.range_div {
+    margin-top: 10px;
+}
+.slider_range{margin-top:10px;}
+.amount_value{width:100px; border:1px solid #ccc !important;font-weight:bold;  text-align:center;}
+.margin_bo{padding:5px;}
+.button_div{position:absolute; top:-16px; width:100%; text-align:center; }
+.button_div a{
+    display: inline-block;
+    padding: 5px 15px;
+    background: var(--primary-color, #18427d);
+    color: #fff;
+    border-radius: 5px;
+    margin: 0px 9px;
+    font-size: 16px;
+}
+	
+.button_div a:hover{ background: var(--primary-color, #18427d); color: #fff;}
+.button_div a:focus{ background: var(--primary-color, #18427d); color: #fff;}
+	
+.title{padding:10px 0px;}
+	
+.accor{
+    width: 100%;
+    cursor:pointer;
+    font-weight:600;
+    font-size:16px;
+    padding: 12px 20px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc url(../../images/plus.png) no-repeat right 20px center; 
+    margin: 10px auto;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+.accor:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+	
+.accor span{float: right; margin-right: 40px;}
+.accor_div{margin-top:5px;}
+.content{ display:none; width: 100%; margin: 0 auto;}
+.minus_1{ background: #f8fafc url(../../images/minus.png) no-repeat right 20px center !important; }
+.head_in{padding-top: 10px; font-size: 18px; padding-left: 10px;}
+.content_1{border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;}
+	
+/* Quick links style */
+#mainclass-ql{padding-bottom:10px;}
+.heading-main{
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--primary-color);
+    line-height: 36px;
+    border-bottom: 1px #ccc dashed;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: left;
+    margin-top: 0;
+}
+.heading-sub{
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    line-height: 30px;
+    background: #475569;
+    padding: 5px 10px;
+    margin-bottom: 0px;
+}
+
+.inner-icon-ul{
+    text-align: left;
+    color: #000;
+    background: #fff;
+    padding: 10px 10px;
+    list-style: none;
+    font-size: 14px;
+    padding-left: 0;
+}
+.inner-icon-ul li{padding-left:30px; margin-bottom:4px; position:relative;}
+.inner-icon-ul li:before {
+    position: absolute;
+    left: 0;
+    content: "\f0a4";
+    font: normal normal normal 14px/1 FontAwesome;
+    color: var(--primary-color);
+    font-weight: normal;
+    font-size: 15px;
+    top: 2px;
+}
+.inner-icon-ul li a{color: #0284c7;}
+
+.table-qlnk{
+    border: 1px solid #cbd5e1;
+    border-spacing: 0px;
+    line-height: 28px;
+    margin-bottom: 20px;
+    font-size:14px;
+    width: 100%;
+}
+
+.table-qlnk th, .table-qlnk td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.table-qlnk thead{background: #475569; color:#fff;}
+.table-qlnk tbody tr:hover{background:#f8fafc;}

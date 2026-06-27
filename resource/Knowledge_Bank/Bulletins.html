@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="rewritten" content="true">
+    <title>Bulletins Directory | KNMC & Associates</title>
+    <link rel="shortcut icon" href="../../image/favicon.ico" />
+    
+    <!-- Shared Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="../../usercss/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../usercss/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../usercss/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../usercss/menu-style.css" />
+    <link rel="stylesheet" type="text/css" href="../../usercss/animate.min.css" />
+</head>
+<body class="intro-head-active">
+    <div id="preloader"><div class="loader-wrapper"><div class="loader-graphic"><div class="spinner-ring"><div></div><div></div></div><div class="loader-logo"><span class="logo-text">CA</span></div></div><h2 class="loader-title">KNMC</h2><p class="loader-subtitle">Associates</p><div class="loader-bar-container"><div class="loader-bar"></div></div><p class="loader-status">Chartered Accountants</p></div></div>
+
+    <!-- Global Header Placeholder -->
+    <div id="global-header-marker"></div>
+
+    <!-- Inner Page Header -->
+    <section class="innr-pg-c">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="kb-breadcrumb mb-2">
+                        <a href="../../index.html">Home</a> &gt; <a href="../Knowledge_Bank.html">Knowledge Bank</a> &gt; <span>Bulletins</span>
+                    </div>
+                    <h1>Bulletins</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-12">
+                
+                <!-- Category Controls -->
+                <div class="row g-3 align-items-center mb-5">
+                    <div class="col-md-6 col-12">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="fa fa-search text-muted"></i></span>
+                            <input type="text" id="catSearch" class="form-control" placeholder="Search bulletins on this page...">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 text-md-end">
+                        <button class="btn btn-sm btn-outline-secondary alpha-btn px-3" onclick="sortList('asc')">A &rarr; Z</button>
+                        <button class="btn btn-sm btn-outline-secondary alpha-btn px-3 ms-2" onclick="sortList('desc')">Z &rarr; A</button>
+                    </div>
+                </div>
+
+                <!-- Subcategories Accordion -->
+                <div class="accordion" id="bulletinAccordion">
+                    
+                    <!-- 1. General Circulars & Notifications -->
+                    <div class="accordion-item mb-3 border rounded shadow-sm overflow-hidden">
+                        <h2 class="accordion-header" id="headingGen">
+                            <button class="accordion-button fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGen" aria-expanded="true" aria-controls="collapseGen">
+                                <i class="fa fa-newspaper-o text-primary me-2"></i> General Notifications & Circulars
+                            </button>
+                        </h2>
+                        <div id="collapseGen" class="accordion-collapse collapse show" aria-labelledby="headingGen" data-bs-parent="#bulletinAccordion">
+                            <div class="accordion-body bg-white p-0">
+                                <ul class="list-group list-group-flush" id="listGen">
+                                    <li class="list-group-item p-3" data-name="RBI & SEBI Notifications"><a href="../../advancesearch/notification/Bulletins/RBISEBI/RBISEBI.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>RBI & SEBI Notifications</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="Notifications Search Hub"><a href="../../notificationsearch/Bulletins/Notification/BullNotification/Notification.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Notifications Search Hub</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="Circulars Search Hub"><a href="../../notificationsearch/Bulletins/Circular/BullNotification/Circular.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Circulars Search Hub</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Tax & Corporate Bulletins -->
+                    <div class="accordion-item mb-3 border rounded shadow-sm overflow-hidden">
+                        <h2 class="accordion-header" id="headingTax">
+                            <button class="accordion-button fs-5 fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTax" aria-expanded="false" aria-controls="collapseTax">
+                                <i class="fa fa-balance-scale text-primary me-2"></i> Tax & Corporate Bulletins
+                            </button>
+                        </h2>
+                        <div id="collapseTax" class="accordion-collapse collapse" aria-labelledby="headingTax" data-bs-parent="#bulletinAccordion">
+                            <div class="accordion-body bg-white p-0">
+                                <ul class="list-group list-group-flush" id="listTax">
+                                    <li class="list-group-item p-3" data-name="Income Tax Bulletins"><a href="../../advancesearch/notification/Bulletins/Income_Tax/Income_Tax.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Income Tax Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="Service Tax Bulletins"><a href="../../advancesearch/notification/Bulletins/Service_Tax/Service_Tax.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Service Tax Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="Central Sales Tax Bulletins"><a href="../../advancesearch/notification/Bulletins/Central_Sales_Tax/Central_Sales_Tax.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Central Sales Tax Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="Excise Matters Bulletins"><a href="../../advancesearch/notification/Bulletins/Excise_Matters/Excise_Matters.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Excise Matters Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="Customs Bulletins"><a href="../../advancesearch/notification/Bulletins/Customs/Customs.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Customs Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="Company Law Bulletins"><a href="../../advancesearch/notification/Bulletins/Corporate_Matters/Corporate_Matters.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Company Law Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="Labour Laws Bulletins"><a href="../../advancesearch/notification/Bulletins/Labour_Laws/Labour_Laws.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Labour Laws Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="FEMA Bulletins"><a href="../../advancesearch/notification/Bulletins/F_E_M_A/F_E_M_A.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>FEMA Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="The LLP Act 2008 Bulletins"><a href="../../advancesearch/notification/Bulletins/News_on_LLP/News_on_LLP.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>The LLP Act 2008 Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="Accounting Standard (INDAS) Bulletins"><a href="../../advancesearch/notification/Bulletins/Accounting_Standards_INDAS/Accounting_Standards_INDAS.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Accounting Standard (INDAS) Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="GST Bulletins"><a href="../../advancesearch/notification/Bulletins/GST/GST.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>GST Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="Others Bulletins"><a href="../../advancesearch/notification/Bulletins/Other/Other.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Others Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. VAT Bulletins -->
+                    <div class="accordion-item mb-3 border rounded shadow-sm overflow-hidden">
+                        <h2 class="accordion-header" id="headingVAT">
+                            <button class="accordion-button fs-5 fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVAT" aria-expanded="false" aria-controls="collapseVAT">
+                                <i class="fa fa-globe text-primary me-2"></i> VAT Bulletins
+                            </button>
+                        </h2>
+                        <div id="collapseVAT" class="accordion-collapse collapse" aria-labelledby="headingVAT" data-bs-parent="#bulletinAccordion">
+                            <div class="accordion-body bg-white p-0">
+                                <ul class="list-group list-group-flush" id="listVAT">
+                                    <li class="list-group-item p-3" data-name="Delhi VAT Bulletins"><a href="../../advancesearch/notification/Bulletins/Delhi_VAT/Delhi_VAT.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Delhi VAT Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="Maharashtra VAT Bulletins"><a href="../../advancesearch/notification/Bulletins/Mumbai_VAT/Mumbai_VAT.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Maharashtra VAT Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="Gujarat VAT Bulletins"><a href="../../advancesearch/notification/Bulletins/Gujarat_VAT/Gujarat_VAT.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Gujarat VAT Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="Telangana VAT Bulletins"><a href="../../advancesearch/notification/Bulletins/Telangana_VAT/Telangana_VAT.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Telangana VAT Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="Tamil Nadu VAT Bulletins"><a href="../../advancesearch/notification/Bulletins/TamilNadu_VAT/TamilNadu_VAT.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Tamil Nadu VAT Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. GST & Regulations Bulletins -->
+                    <div class="accordion-item mb-3 border rounded shadow-sm overflow-hidden">
+                        <h2 class="accordion-header" id="headingGST">
+                            <button class="accordion-button fs-5 fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGST" aria-expanded="false" aria-controls="collapseGST">
+                                <i class="fa fa-cogs text-primary me-2"></i> GST & IBC Regulations
+                            </button>
+                        </h2>
+                        <div id="collapseGST" class="accordion-collapse collapse" aria-labelledby="headingGST" data-bs-parent="#bulletinAccordion">
+                            <div class="accordion-body bg-white p-0">
+                                <ul class="list-group list-group-flush" id="listGST">
+                                    <li class="list-group-item p-3" data-name="IGST Bulletins"><a href="../../advancesearch/notification/Bulletins/IGST/IGST.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>IGST Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="UTGST Bulletins"><a href="../../advancesearch/notification/Bulletins/UTGST/UTGST.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>UTGST Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="Compensation Cess Bulletins"><a href="../../advancesearch/notification/Bulletins/Compensation_Cess/Compensation_Cess.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>Compensation Cess Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                    <li class="list-group-item p-3" data-name="IBC Regulation Bulletins"><a href="../../advancesearch/notification/Bulletins/IBC_Regulation/IBC_Regulation.html" class="d-flex justify-content-between align-items-center text-decoration-none text-dark"><span>IBC Regulation Bulletins</span> <i class="fa fa-chevron-right text-muted small"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="emptyState" class="text-center py-5 d-none">
+                    <i class="fa fa-search text-muted fs-1 mb-3"></i>
+                    <h5>No Bulletins Found</h5>
+                    <p class="text-muted small">Try refining your search terms.</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Global Footer Placeholder -->
+    <div id="global-footer-marker"></div>
+
+    <!-- Scripts -->
+    <script src="../../usercss/apopper.min.js"></script>
+    <script src="../../usercss/bootstrap.min.js"></script>
+    
+    <script>
+        // Real-time search filter
+        const searchInput = document.getElementById('catSearch');
+        const listItems = document.querySelectorAll('.list-group-item');
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        const emptyState = document.getElementById('emptyState');
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+            let totalVisible = 0;
+
+            accordionItems.forEach(item => {
+                const lis = item.querySelectorAll('.list-group-item');
+                let groupVisible = 0;
+
+                lis.forEach(li => {
+                    const name = li.getAttribute('data-name').toLowerCase();
+                    if (name.includes(query)) {
+                        li.classList.remove('d-none');
+                        groupVisible++;
+                        totalVisible++;
+                    } else {
+                        li.classList.add('d-none');
+                    }
+                });
+
+                if (groupVisible > 0) {
+                    item.classList.remove('d-none');
+                    if (query.length > 0) {
+                        const collapseEl = item.querySelector('.accordion-collapse');
+                        const bsCollapse = bootstrap.Collapse.getOrCreateInstance(collapseEl, { toggle: false });
+                        bsCollapse.show();
+                    }
+                } else {
+                    item.classList.add('d-none');
+                }
+            });
+
+            if (totalVisible === 0) {
+                emptyState.classList.remove('d-none');
+            } else {
+                emptyState.classList.add('d-none');
+            }
+        });
+
+        // Alphabetical sorting
+        function sortList(direction) {
+            const lists = document.querySelectorAll('.list-group');
+            lists.forEach(list => {
+                const items = Array.from(list.querySelectorAll('.list-group-item'));
+                items.sort((a, b) => {
+                    const nameA = a.getAttribute('data-name').toLowerCase();
+                    const nameB = b.getAttribute('data-name').toLowerCase();
+                    if (direction === 'asc') {
+                        return nameA.localeCompare(nameB);
+                    } else {
+                        return nameB.localeCompare(nameA);
+                    }
+                });
+                items.forEach(item => list.appendChild(item));
+            });
+        }
+    </script>
+</body>
+</html>

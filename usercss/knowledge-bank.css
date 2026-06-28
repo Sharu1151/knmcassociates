@@ -1162,10 +1162,26 @@ body.kb-page .active-tab {
 }
 
 /* Prevent legacy wrapper tables from causing horizontal page layout expansion on mobile */
-.kb-content-area table[id^="tbl_forcss"] {
+.kb-content-area table {
     width: 100% !important;
-    display: block !important;
-    overflow-x: auto !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+}
+
+/* Ensure data tables within the scroller can still have standard auto width layout for scrolling */
+.kb-content-area .table-responsive table {
+    table-layout: auto !important;
+    width: auto !important;
+    min-width: 750px !important;
+}
+
+/* Constrain legacy nested container divs to prevent layout breaking */
+.kb-content-area .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 /* ── Print ───────────────────────────────────────────────────────────────── */

@@ -2060,3 +2060,31 @@ ul.inner-icon-ul li a:hover {
         background-color: var(--primary-color) !important;
     }
 }
+
+/* Hero section mobile centering alignment overrides */
+@media (max-width: 991.98px) {
+    .top-section {
+        text-align: center !important;
+    }
+    .top-section p {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .hero-pill {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .hero-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+    .hero-actions a {
+        width: 100% !important;
+        max-width: 400px !important;
+        text-align: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+    }
+}

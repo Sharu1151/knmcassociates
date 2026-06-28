@@ -1108,6 +1108,51 @@ body.kb-page .active-tab {
     padding: 0 !important;
 }
 
+/* Modern responsive grid layout for directory indexes (Quick Links, Important Links, etc.) */
+.inner-icon-ul, .inner-ul {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+    gap: var(--kb-space-md, 16px) !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: var(--kb-space-lg, 24px) auto !important;
+    text-align: left !important;
+    width: 100% !important;
+    max-width: 900px !important; /* Centers and limits width on desktop */
+}
+
+.inner-icon-ul li, .inner-ul li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.inner-icon-ul li a, .inner-ul li a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: var(--kb-surface, #ffffff) !important;
+    border: var(--kb-border, 1px solid #e2e8f0) !important;
+    border-radius: var(--kb-radius-md, 12px) !important;
+    padding: var(--kb-space-md, 16px) var(--kb-space-lg, 24px) !important;
+    color: var(--primary-accent, #c5a880) !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    box-shadow: var(--kb-shadow-sm, 0 1px 3px rgba(0,0,0,0.05)) !important;
+    transition: all 0.2s ease !important;
+    min-height: 72px !important;
+    height: 100% !important;
+}
+
+.inner-icon-ul li a:hover, .inner-ul li a:hover {
+    background: var(--primary-color, #0f1e36) !important;
+    color: #ffffff !important;
+    border-color: var(--primary-color, #0f1e36) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: var(--kb-shadow-md, 0 4px 12px rgba(15,30,54,0.08)) !important;
+}
+
 /* ── Print ───────────────────────────────────────────────────────────────── */
 @media print {
     .kb-sidebar,

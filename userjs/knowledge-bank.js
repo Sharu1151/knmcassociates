@@ -260,8 +260,89 @@
                                 }
                             }
                         });
-                    }
                 });
+
+                // B3. Modernize Acts/Rules Search Forms
+                const sectionInput = pageContent.querySelector('input[id*="txt_SectionID"]');
+                const contentInput = pageContent.querySelector('input[id*="txt_Content"]');
+                if (sectionInput && contentInput) {
+                    const formTable = sectionInput.closest('table');
+                    if (formTable) {
+                        const searchBtn = pageContent.querySelector('input[id*="btn_Search"]');
+                        const homeBtn = pageContent.querySelector('input[id*="btn_Home"]');
+                        const backBtn = pageContent.querySelector('input[id="btn_Back"]');
+                        const resultSpan = pageContent.querySelector('[id*="lbl_result"]');
+
+                        const modernForm = document.createElement('div');
+                        modernForm.className = 'kb-form-modern row g-3 align-items-end mb-4 p-4 bg-light rounded-3 border border-light-subtle';
+
+                        // Column 1: Section
+                        const colSection = document.createElement('div');
+                        colSection.className = 'col-md-4 col-12 text-start';
+                        const lblSection = document.createElement('label');
+                        lblSection.className = 'form-label fw-bold text-secondary mb-1';
+                        lblSection.style.fontSize = '0.85rem';
+                        lblSection.textContent = 'Section / Rule Number';
+                        colSection.appendChild(lblSection);
+                        
+                        sectionInput.className = 'form-control';
+                        sectionInput.placeholder = 'e.g., Sec 80C';
+                        sectionInput.style.width = '100%';
+                        sectionInput.style.height = 'auto';
+                        colSection.appendChild(sectionInput);
+                        modernForm.appendChild(colSection);
+
+                        // Column 2: Content
+                        const colContent = document.createElement('div');
+                        colContent.className = 'col-md-4 col-12 text-start';
+                        const lblContent = document.createElement('label');
+                        lblContent.className = 'form-label fw-bold text-secondary mb-1';
+                        lblContent.style.fontSize = '0.85rem';
+                        lblContent.textContent = 'Content Keywords';
+                        colContent.appendChild(lblContent);
+
+                        contentInput.className = 'form-control';
+                        contentInput.placeholder = 'e.g., deduction';
+                        contentInput.style.width = '100%';
+                        contentInput.style.height = 'auto';
+                        colContent.appendChild(contentInput);
+                        modernForm.appendChild(colContent);
+
+                        // Column 3: Actions
+                        const colActions = document.createElement('div');
+                        colActions.className = 'col-md-4 col-12 d-flex gap-2 justify-content-md-end justify-content-start align-items-center mt-3 mt-md-0';
+
+                        if (searchBtn) {
+                            searchBtn.className = 'btn btn-primary px-4 py-2 fw-semibold text-white d-flex align-items-center justify-content-center';
+                            searchBtn.style.width = 'auto';
+                            searchBtn.style.height = 'auto';
+                            colActions.appendChild(searchBtn);
+                        }
+                        if (homeBtn) {
+                            homeBtn.className = 'btn btn-outline-secondary px-3 py-2 fw-semibold d-flex align-items-center justify-content-center';
+                            homeBtn.style.width = 'auto';
+                            homeBtn.style.height = 'auto';
+                            colActions.appendChild(homeBtn);
+                        }
+                        if (backBtn) {
+                            backBtn.className = 'btn btn-outline-secondary px-3 py-2 fw-semibold d-flex align-items-center justify-content-center';
+                            backBtn.style.width = 'auto';
+                            backBtn.style.height = 'auto';
+                            colActions.appendChild(backBtn);
+                        }
+                        modernForm.appendChild(colActions);
+
+                        if (resultSpan) {
+                            const colResult = document.createElement('div');
+                            colResult.className = 'col-12 mt-2 text-start text-danger fw-semibold small';
+                            colResult.appendChild(resultSpan);
+                            modernForm.appendChild(colResult);
+                        }
+
+                        // Replace formTable with modernForm
+                        formTable.parentNode.replaceChild(modernForm, formTable);
+                    }
+                }
 
                 // C. Build Responsive Grid Shell Layout
                 const mainShell = document.createElement('main');

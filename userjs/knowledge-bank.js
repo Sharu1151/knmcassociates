@@ -605,6 +605,24 @@
                 `;
                 cardWrapper.appendChild(searchBoxDiv);
 
+                // Hide any redundant h1 or main-heading elements inside pageContent to prevent duplication
+                const contentHeadings = pageContent.querySelectorAll('h1, h2, .main-heading');
+                contentHeadings.forEach(h => {
+                    const text = h.textContent.trim().toLowerCase();
+                    const cleanPageTitle = pageTitleText.toLowerCase().replace(/\s+/g, '');
+                    const cleanText = text.replace(/\s+/g, '');
+                    if (
+                        cleanText.includes(cleanPageTitle) || 
+                        cleanPageTitle.includes(cleanText) || 
+                        text === 'quick links' || 
+                        text === 'important links' || 
+                        text === 'gst/vat links' || 
+                        text === 'ease of doing business'
+                    ) {
+                        h.style.display = 'none';
+                    }
+                });
+
                 // G. Append original modernized page content
                 cardWrapper.appendChild(pageContent);
                 contentCol.appendChild(cardWrapper);

@@ -1319,6 +1319,7 @@ tr:hover td {
     transition: var(--transition-smooth) !important;
     font-size: 0.85rem !important;
     outline: none !important;
+    width: auto !important; /* Force auto-width to override narrow inline style properties */
 }
 
 #HomepagecontentControl_C input[type="button"]:hover, 
@@ -1713,5 +1714,65 @@ ul.inner-icon-ul li a:hover {
     .table,
     .table-responsive table {
         min-width: auto !important; /* Force override of runtime 1000px force on mobile to prevent card stretch */
+    }
+    
+    /* Convert legacy form tables to clean flexbox lists on mobile devices */
+    #tbl_forcss1 table tbody tr:not(.calc-res),
+    #HomepagecontentControl_C table tbody tr:not(.calc-res) {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 0 !important;
+        border-bottom: 1px solid rgba(15, 30, 54, 0.05) !important;
+        width: 100% !important;
+    }
+    
+    #tbl_forcss1 table tbody tr td,
+    #HomepagecontentControl_C table tbody tr td {
+        display: block !important;
+        width: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        background: transparent !important;
+    }
+    
+    /* Section headers / full-width label rows conversion */
+    #tbl_forcss1 table tbody tr td[colspan],
+    #HomepagecontentControl_C table tbody tr td[colspan] {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+        padding: 12px 0 6px 0 !important;
+        font-weight: 800 !important;
+        font-size: 1.05rem !important;
+        color: var(--primary-color, #0f1e36) !important;
+        border-bottom: 2px solid var(--primary-accent, #c5a880) !important;
+        margin-top: 10px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+    
+    /* Style form controls inside tables for consistency on mobile devices */
+    #tbl_forcss1 table tbody tr td input[type="text"],
+    #tbl_forcss1 table tbody tr td select,
+    #HomepagecontentControl_C table tbody tr td input[type="text"],
+    #HomepagecontentControl_C table tbody tr td select {
+        width: 100% !important;
+        max-width: 140px !important;
+        height: 38px !important;
+        padding: 6px 8px !important;
+        border-radius: 6px !important;
+        border: 1px solid #cbd5e1 !important;
+        font-size: 0.88rem !important;
+        text-align: right !important;
+        background-color: #ffffff !important;
+    }
+    
+    #tbl_forcss1 table tbody tr td select,
+    #HomepagecontentControl_C table tbody tr td select {
+        text-align-last: right !important;
+        padding-right: 20px !important;
     }
 }

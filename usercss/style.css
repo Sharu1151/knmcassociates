@@ -1705,3 +1705,13 @@ ul.inner-icon-ul li a:hover {
 .rdLeft, .rdRight {
     display: none !important;
 }
+
+/* Global Mobile Layout Table Overflow and Card Sizing Fixes */
+@media (max-width: 991px) {
+    #HomepagecontentControl_C table, 
+    #tbl_forcss1 table,
+    .table,
+    .table-responsive table {
+        min-width: auto !important; /* Force override of runtime 1000px force on mobile to prevent card stretch */
+    }
+}

@@ -260,6 +260,7 @@
                                 }
                             }
                         });
+                    }
                 });
 
                 // B3. Modernize Acts/Rules Search Forms

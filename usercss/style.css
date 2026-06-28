@@ -1483,7 +1483,7 @@ ul.inner-icon-ul li a:hover {
     font-family: 'Outfit', sans-serif !important;
     font-size: 0.95rem !important;
     font-weight: 700 !important;
-    color: var(--primary-color, #0f1e36) !important;
+    color: var(--primary-accent, #c5a880) !important;
     text-transform: uppercase !important;
     letter-spacing: 0.5px !important;
     border-bottom: 2px solid var(--primary-accent, #c5a880) !important;

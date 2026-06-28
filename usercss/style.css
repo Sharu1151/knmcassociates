@@ -1984,7 +1984,11 @@ ul.inner-icon-ul li a:hover {
 
 /* Fix mobile responsive tables */
 @media (max-width: 991px) {
-    #HomepagecontentControl_C .RadGrid table,
+    #HomepagecontentControl_C .RadGrid table {
+        display: table !important;
+        width: auto !important;
+        min-width: 750px !important;
+    }
     #HomepagecontentControl_C .RadGrid tbody,
     #HomepagecontentControl_C .RadGrid thead,
     #HomepagecontentControl_C .RadGrid tr {

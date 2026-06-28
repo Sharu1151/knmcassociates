@@ -246,6 +246,23 @@
                     btn.style.border = 'none';
                 });
 
+                // B2. Clean up trailing parenthesis/text outside anchors inside list items (common in legacy lists)
+                pageContent.querySelectorAll('li').forEach(li => {
+                    const anchors = li.querySelectorAll('a');
+                    if (anchors.length === 1) {
+                        const a = anchors[0];
+                        Array.from(li.childNodes).forEach(node => {
+                            if (node !== a && node.nodeType === Node.TEXT_NODE) {
+                                const trimmed = node.textContent.trim();
+                                if (trimmed && (trimmed === ')' || trimmed === '(' || trimmed === '.' || trimmed === ',')) {
+                                    a.textContent = a.textContent.trim() + trimmed;
+                                    node.textContent = '';
+                                }
+                            }
+                        });
+                    }
+                });
+
                 // C. Build Responsive Grid Shell Layout
                 const mainShell = document.createElement('main');
                 mainShell.className = 'kb-container container-fluid px-md-5 py-4';

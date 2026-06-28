@@ -1809,11 +1809,12 @@ ul.inner-icon-ul li a:hover {
 #HomepagecontentControl_C_ctl00_SearchTD .row {
     display: flex !important;
     justify-content: center !important;
-    gap: 10px !important;
+    gap: 12px !important;
     flex-wrap: wrap !important;
 }
 
-#HomepagecontentControl_C_ctl00_SearchTD .col-md-2 {
+#HomepagecontentControl_C_ctl00_SearchTD .col-md-2,
+#HomepagecontentControl_C_ctl00_SearchTD .col-md-4 {
     width: auto !important;
     flex: 0 0 auto !important;
     padding: 0 !important;
@@ -1823,7 +1824,7 @@ ul.inner-icon-ul li a:hover {
     background-color: #f8fafc !important;
     color: #475569 !important;
     font-weight: 700 !important;
-    border: 1px solid #e2e8f0 !important;
+    border: 1px solid #cbd5e1 !important;
     border-radius: 30px !important;
     padding: 10px 24px !important;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -1832,6 +1833,7 @@ ul.inner-icon-ul li a:hover {
     text-transform: uppercase !important;
     letter-spacing: 0.5px !important;
     width: auto !important;
+    display: inline-block !important;
 }
 
 #HomepagecontentControl_C_ctl00_SearchTD input[type="button"]:hover {
@@ -1848,25 +1850,21 @@ ul.inner-icon-ul li a:hover {
     box-shadow: 0 4px 12px rgba(15, 30, 54, 0.25) !important;
 }
 
-/* Modern Form Row Wrap for ample spacing */
-#msform .row {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 16px !important;
+/* Modern Form Row Grid for ample spacing and perfect wrap */
+#msform fieldset > .row {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+    gap: 20px !important;
     align-items: flex-end !important;
 }
 
-#msform .col-md-2,
-#msform .col-md-3,
-#msform .col-md-4,
-#msform .col-md-1 {
-    width: auto !important;
-    flex: 1 1 200px !important;
+#msform fieldset > .row > div[class*="col-"] {
+    width: 100% !important;
     max-width: 100% !important;
     padding: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 6px !important;
+    gap: 8px !important;
     align-items: stretch !important;
 }
 

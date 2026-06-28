@@ -4,6 +4,320 @@
 (function(window) {
     'use strict';
 
+    // A. Consolidated Resource Index Data (KB_RESOURCES)
+    const KB_RESOURCES = [
+        // Links
+        { title: "Quick Links (Income Tax, MCA, PF, ESI, VAT)", url: "../resources/Links/Quick_Link/Quick_Link.html", cat: "Links" },
+        { title: "Important Web Links", url: "../resources/Links/important_links/important_links.html", cat: "Links" },
+        { title: "GST/VAT Official Links", url: "../resources/Links/Vat_Links/Vat_Links.html", cat: "Links" },
+        { title: "Ease of Doing Business Portals", url: "../resources/Links/EASE_OF_DOING_BUSINESS/EASE_OF_DOING_BUSINESS.html", cat: "Links" },
+
+        // Acts
+        { title: "Income Tax Act, 1961", url: "../laws/-26/Income_Tax_Act.html", cat: "Acts" },
+        { title: "Wealth Tax Act", url: "../laws/-75/Wealth_Tax_Act.html", cat: "Acts" },
+        { title: "Income Declaration Scheme 2016", url: "../laws/-157/Income_Declaration_Scheme_2016.html", cat: "Acts" },
+        { title: "Income Tax Act 2025", url: "../laws/-260/Income_tax_2025.html", cat: "Acts" },
+        { title: "Service Tax Act (Finance Act, 1994)", url: "../laws/-30/Service_Tax_Act.html", cat: "Acts" },
+        { title: "Central Sales Tax Act, 1956", url: "../laws/-36/Central_Sales_Tax_Act,_1956.html", cat: "Acts" },
+        { title: "The Central Excise Act, 1944", url: "../laws/-40/The_Central_Excise_Act,_1944.html", cat: "Acts" },
+        { title: "Customs Act, 1962", url: "../laws/-53/Customs_Act,_1962.html", cat: "Acts" },
+        { title: "Entry Tax Act", url: "../laws/-102/Entry_Tax_Act.html", cat: "Acts" },
+        { title: "Companies Act, 2013", url: "../laws/-103/Companies_Act_2013.html", cat: "Acts" },
+        { title: "Companies Act, 1956", url: "../laws/-42/Companies_Act,_1956.html", cat: "Acts" },
+        { title: "The Limited Liability Partnership Act, 2008", url: "../laws/-48/The_Limited_Liability_Partnership_ACT,_2008.html", cat: "Acts" },
+        { title: "The Securities and Exchange Board of India Act, 1992", url: "../laws/-59/The_Securities_and_Exchange_Board_of_India_Act,_1992.html", cat: "Acts" },
+        { title: "Delhi Value Added Tax Act, 2004", url: "../laws/-32/Delhi_Value_Added_Tax_Act,_2004.html", cat: "Acts" },
+        { title: "Maharashtra Value Added Tax Act, 2002", url: "../laws/-39/Maharashtra_Value_Added_Tax_Act_(2002).html", cat: "Acts" },
+        { title: "West Bengal Value Added Tax Act, 2003", url: "../laws/-49/West_Bengal_Value_Added_Tax_Act,_2003.html", cat: "Acts" },
+        { title: "Tamilnadu VAT Act, 2006", url: "../laws/-152/Tamilnadu_VAT_ACT_2006.html", cat: "Acts" },
+        { title: "Karnataka Value Added Tax Act, 2003", url: "../laws/-89/Karnataka_Value_Added_Tax_Act,_2003.html", cat: "Acts" },
+        { title: "Gujarat Value Added Tax Act, 2003", url: "../laws/-150/Gujarat_Value_Added_Tax_Act_2003.html", cat: "Acts" },
+        { title: "The Uttar Pradesh Value Added Tax Act, 2008", url: "../laws/-46/The_Uttar_Pradesh_Value_Added_Tax_Act_2008.html", cat: "Acts" },
+        { title: "Rajasthan Value Added Tax Act, 2003", url: "../laws/-94/Rajasthan_Value_Added_Tax_Act,_2003.html", cat: "Acts" },
+        { title: "Punjab Value Added Tax Act", url: "../laws/-65/Punjab_Value_Added_Tax_Act.html", cat: "Acts" },
+        { title: "Haryana Value Added Tax Act", url: "../laws/-68/Haryana_Value_Added_Tax_Act.html", cat: "Acts" },
+        { title: "Telangana VAT Act, 2005", url: "../laws/-148/Telangana_VAT_Act_2005.html", cat: "Acts" },
+        { title: "Andhra Pradesh VAT Act, 2005", url: "../laws/-81/Andhra_Pradesh_Value_Added_Tax_Act,_2005.html", cat: "Acts" },
+        { title: "Bihar Value Added Tax Act, 2005", url: "../laws/-91/Bihar_Value_Added_Tax_Act,_2005.html", cat: "Acts" },
+        { title: "The Employees' State Insurance Act, 1948", url: "../laws/-57/The_Employees_State_Insurance_Act,_1948.html", cat: "Acts" },
+        { title: "The Employees' Provident Funds Act, 1952", url: "../laws/-58/The_Employees_Provident_Funds_and_Miscellaneous_Provisions_Act,_1952.html", cat: "Acts" },
+        { title: "Profession Tax Act", url: "../laws/-98/Profession_Tax_Act.html", cat: "Acts" },
+        { title: "The Indian Partnership Act, 1932", url: "../laws/-114/The_Indian_Partnership_Act_1932.html", cat: "Acts" },
+        { title: "Societies Registration Act, 1860", url: "../laws/-116/Societies_Registration_Act_1860.html", cat: "Acts" },
+        { title: "Competition Act, 2002", url: "../laws/-118/Competition_Act_2002.html", cat: "Acts" },
+        { title: "Reserve Bank of India Act, 1934", url: "../laws/-119/Reserve_Bank_of_India_Act_1934.html", cat: "Acts" },
+        { title: "MRTP Act, 1969", url: "../laws/-120/Monopolies_and_Restrictive_Trade_Practices_Act_1969.html", cat: "Acts" },
+        { title: "Equalisation Levy Act, 2016", url: "../laws/-154/Equalisation_Levy_Act_2016.html", cat: "Acts" },
+        { title: "Right To Information Act, 2005", url: "../laws/-33/Right_To_Information_Act,_2005.html", cat: "Acts" },
+        { title: "Foreign Exchange Management Act (FEMA), 1999", url: "../laws/-101/Foreign_Exchange_Management_Act_1999.html", cat: "Acts" },
+        { title: "Maharashtra RERA Rules & Act", url: "../laws/-210/Maharashtra_Real_Estate_Regulatory_Authority_and_Rules.html", cat: "Acts" },
+        { title: "Real Estate (RERA) Act, 2016", url: "../laws/-214/THE_REAL_ESTATE_REGULATION_AND_DEVELOPMENT_ACT_2016.html", cat: "Acts" },
+        { title: "The Insolvency and Bankruptcy Code, 2016", url: "../laws/-220/The_Insolvency_and_Bankruptcy_Code_2016.html", cat: "Acts" },
+        { title: "Prohibition of Benami Property Act, 1988", url: "../laws/-244/Prohibition_Of_Benami_Property_Transaction_Act_1988.html", cat: "Acts" },
+        { title: "IGST Act, 2017", url: "../laws/-162/IGST_Act_2017.html", cat: "Acts" },
+        { title: "CGST Act, 2017", url: "../laws/-164/Central_Goods_and_Services_Tax_Act_2017.html", cat: "Acts" },
+        { title: "UTGST Act, 2017", url: "../laws/-186/Union_Territory_Goods_and_Services_Tax_Act_2017.html", cat: "Acts" },
+        { title: "GST Compensation to States Act", url: "../laws/-187/GST_Compensation_to_States_Act_2017.html", cat: "Acts" }
+    ];
+    window.KB_RESOURCES = KB_RESOURCES; // Support legacy index script references
+
+    // B. Consolidated Context Navigation Rules (KBNavigation)
+    const kbCategories = [
+        {
+            name: "Links",
+            icon: "fa-link",
+            url: "resource/Knowledge_Bank/Links.html",
+            isSub: false,
+            items: [
+                { name: "Quick Links", url: "resources/Links/Quick_Link/Quick_Link.html" },
+                { name: "Important Links", url: "resources/Links/important_links/important_links.html" },
+                { name: "GST/VAT Links", url: "resources/Links/Vat_Links/Vat_Links.html" },
+                { name: "Ease Of Doing Business", url: "resources/Links/EASE_OF_DOING_BUSINESS/EASE_OF_DOING_BUSINESS.html" }
+            ]
+        },
+        {
+            name: "Acts",
+            icon: "fa-book",
+            url: "resource/Knowledge_Bank/Acts.html",
+            isSub: true,
+            subcategories: [
+                {
+                    name: "Direct Tax",
+                    items: [
+                        { name: "Income Tax Act", url: "laws/-26/Income_Tax_Act.html" },
+                        { name: "Wealth Tax Act", url: "laws/-75/Wealth_Tax_Act.html" },
+                        { name: "Income Declaration Scheme 2016", url: "laws/-157/Income_Declaration_Scheme_2016.html" },
+                        { name: "Income Tax 2025", url: "laws/-260/Income_tax_2025.html" }
+                    ]
+                },
+                {
+                    name: "Indirect Tax",
+                    items: [
+                        { name: "Service Tax Act", url: "laws/-30/Service_Tax_Act.html" },
+                        { name: "Central Sales Tax Act", url: "laws/-36/Central_Sales_Tax_Act,_1956.html" },
+                        { name: "Central Excise Act", url: "laws/-40/The_Central_Excise_Act,_1944.html" },
+                        { name: "Customs Act", url: "laws/-53/Customs_Act,_1962.html" },
+                        { name: "Entry Tax Act", url: "laws/-102/Entry_Tax_Act.html" }
+                    ]
+                },
+                {
+                    name: "Corporate Laws",
+                    items: [
+                        { name: "Companies Act 2013", url: "laws/-103/Companies_Act_2013.html" },
+                        { name: "Companies Act 1956", url: "laws/-42/Companies_Act,_1956.html" },
+                        { name: "LLP Act", url: "laws/-48/The_Limited_Liability_Partnership_ACT,_2008.html" },
+                        { name: "SEBI Act", url: "laws/-59/The_Securities_and_Exchange_Board_of_India_Act,_1992.html" }
+                    ]
+                },
+                {
+                    name: "VAT Laws",
+                    items: [
+                        { name: "Delhi VAT", url: "laws/-32/Delhi_Value_Added_Tax_Act,_2004.html" },
+                        { name: "Maharashtra VAT", url: "laws/-39/Maharashtra_Value_Added_Tax_Act_(2002).html" },
+                        { name: "West Bengal VAT", url: "laws/-49/West_Bengal_Value_Added_Tax_Act,_2003.html" },
+                        { name: "Tamil Nadu VAT", url: "laws/-152/Tamilnadu_VAT_ACT_2006.html" },
+                        { name: "Karnataka VAT", url: "laws/-89/Karnataka_Value_Added_Tax_Act,_2003.html" },
+                        { name: "Gujarat VAT", url: "laws/-150/Gujarat_Value_Added_Tax_Act_2003.html" },
+                        { name: "Uttar Pradesh VAT", url: "laws/-46/The_Uttar_Pradesh_Value_Added_Tax_Act_2008.html" },
+                        { name: "Rajasthan VAT", url: "laws/-94/Rajasthan_Value_Added_Tax_Act,_2003.html" },
+                        { name: "Punjab VAT", url: "laws/-65/Punjab_Value_Added_Tax_Act.html" },
+                        { name: "Haryana VAT", url: "laws/-68/Haryana_Value_Added_Tax_Act.html" },
+                        { name: "Telangana VAT", url: "laws/-148/Telangana_VAT_Act_2005.html" },
+                        { name: "Andhra Pradesh VAT", url: "laws/-81/Andhra_Pradesh_Value_Added_Tax_Act,_2005.html" },
+                        { name: "Bihar VAT", url: "laws/-91/Bihar_Value_Added_Tax_Act,_2005.html" }
+                    ]
+                },
+                {
+                    name: "Other Statutes",
+                    items: [
+                        { name: "ESI Act", url: "laws/-57/The_Employees_State_Insurance_Act,_1948.html" },
+                        { name: "PF Act", url: "laws/-58/The_Employees_Provident_Funds_and_Miscellaneous_Provisions_Act,_1952.html" },
+                        { name: "Profession Tax Act", url: "laws/-98/Profession_Tax_Act.html" },
+                        { name: "Partnership Act", url: "laws/-114/The_Indian_Partnership_Act_1932.html" },
+                        { name: "Societies Registration Act", url: "laws/-116/Societies_Registration_Act_1860.html" },
+                        { name: "Competition Act", url: "laws/-118/Competition_Act_2002.html" },
+                        { name: "RBI Act", url: "laws/-119/Reserve_Bank_of_India_Act_1934.html" },
+                        { name: "MRTP Act", url: "laws/-120/Monopolies_and_Restrictive_Trade_Practices_Act_1969.html" },
+                        { name: "Equalisation Levy Act", url: "laws/-154/Equalisation_Levy_Act_2016.html" },
+                        { name: "Right To Information Act", url: "laws/-33/Right_To_Information_Act,_2005.html" },
+                        { name: "FEMA", url: "laws/-101/Foreign_Exchange_Management_Act_1999.html" },
+                        { name: "Maharashtra RERA", url: "laws/-210/Maharashtra_Real_Estate_Regulatory_Authority_and_Rules.html" },
+                        { name: "RERA 2016", url: "laws/-214/THE_REAL_ESTATE_REGULATION_AND_DEVELOPMENT_ACT_2016.html" },
+                        { name: "Insolvency & Bankruptcy Code", url: "laws/-220/The_Insolvency_and_Bankruptcy_Code_2016.html" },
+                        { name: "Benami Property Act", url: "laws/-244/Prohibition_Of_Benami_Property_Transaction_Act_1988.html" }
+                    ]
+                },
+                {
+                    name: "GST Laws",
+                    items: [
+                        { name: "IGST Act", url: "laws/-162/IGST_Act_2017.html" },
+                        { name: "CGST Act", url: "laws/-164/Central_Goods_and_Services_Tax_Act_2017.html" },
+                        { name: "UTGST Act", url: "laws/-186/Union_Territory_Goods_and_Services_Tax_Act_2017.html" },
+                        { name: "GST Compensation Act", url: "laws/-187/GST_Compensation_to_States_Act_2017.html" }
+                    ]
+                }
+            ]
+        }
+    ];
+
+    const getKBCategory = function(pathname) {
+        const pathLower = pathname.toLowerCase();
+        if (pathLower.includes('/links/')) return { name: "Links", url: "resource/Knowledge_Bank/Links.html", index: 0 };
+        if (pathLower.includes('/laws/')) return { name: "Acts", url: "resource/Knowledge_Bank/Acts.html", index: 1 };
+        return { name: "Knowledge Bank", url: "resource/Knowledge_Bank.html", index: -1 };
+    };
+
+    const KBNavigation = {
+        categories: kbCategories,
+        getContext: getKBCategory
+    };
+    window.KBNavigation = KBNavigation; // Support legacy index script references
+
+    // C. Consolidated Search Highlight & Filter Utilities (KBSearch)
+    const removeHighlights = function(root) {
+        if (!root) return;
+        root.querySelectorAll('mark.highlight').forEach(mark => {
+            const textNode = document.createTextNode(mark.textContent);
+            if (mark.parentNode) {
+                mark.parentNode.replaceChild(textNode, mark);
+            }
+        });
+    };
+
+    const highlightText = function(root, query) {
+        removeHighlights(root);
+        if (!query) return;
+
+        const walk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+        const textNodes = [];
+        let node;
+        while (node = walk.nextNode()) {
+            const parent = node.parentNode;
+            if (parent && !['SCRIPT', 'STYLE', 'INPUT', 'SELECT', 'BUTTON', 'A', 'TEXTAREA'].includes(parent.tagName)) {
+                textNodes.push(node);
+            }
+        }
+
+        textNodes.forEach(node => {
+            const val = node.nodeValue;
+            const idx = val.toLowerCase().indexOf(query);
+            if (idx !== -1 && node.parentNode) {
+                const matchedText = val.substr(idx, query.length);
+                const rest = val.split(new RegExp(query, 'i'));
+                const span = document.createElement('span');
+
+                for (let i = 0; i < rest.length; i++) {
+                    span.appendChild(document.createTextNode(rest[i]));
+                    if (i < rest.length - 1) {
+                        const mark = document.createElement('mark');
+                        mark.className = 'highlight bg-warning-subtle text-warning-emphasis p-0 rounded';
+                        mark.textContent = matchedText;
+                        span.appendChild(mark);
+                    }
+                }
+                node.parentNode.replaceChild(span, node);
+            }
+        });
+    };
+
+    const initLocalSearch = function(searchInput, suggestionsDiv, contentArea) {
+        if (!searchInput || !suggestionsDiv || !contentArea) return;
+
+        let activeSuggestionIdx = -1;
+
+        const updateSuggestions = (suggestions, query) => {
+            if (suggestions.length === 0 || query === '') {
+                suggestionsDiv.classList.add('d-none');
+                suggestionsDiv.innerHTML = '';
+                activeSuggestionIdx = -1;
+                return;
+            }
+
+            suggestionsDiv.classList.remove('d-none');
+            suggestionsDiv.innerHTML = suggestions.map((s, idx) => `
+                <a href="${s.url}" class="list-group-item list-group-item-action py-2 px-3 border-light-subtle suggestion-item" data-index="${idx}">
+                    <i class="fa fa-file-text-o me-2 text-primary"></i> ${s.title}
+                </a>
+            `).join('');
+
+            activeSuggestionIdx = -1;
+        };
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            const items = contentArea.querySelectorAll('li, tr, .resource-card');
+            const suggestions = [];
+
+            items.forEach(item => {
+                if (item.tagName.toLowerCase() === 'tr' && item.closest('thead')) return;
+
+                const text = item.textContent.toLowerCase();
+                if (query === '') {
+                    item.style.display = '';
+                    removeHighlights(item);
+                } else if (text.includes(query)) {
+                    item.style.display = '';
+                    highlightText(item, query);
+
+                    const link = item.querySelector('a');
+                    if (link && suggestions.length < 10) {
+                        suggestions.push({
+                            title: link.textContent.trim(),
+                            url: link.getAttribute('href')
+                        });
+                    }
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            updateSuggestions(suggestions, query);
+        });
+
+        searchInput.addEventListener('keydown', (e) => {
+            const suggestionItems = suggestionsDiv.querySelectorAll('.suggestion-item');
+            if (suggestionItems.length === 0) return;
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (activeSuggestionIdx < suggestionItems.length - 1) {
+                    if (activeSuggestionIdx !== -1) suggestionItems[activeSuggestionIdx].classList.remove('active');
+                    activeSuggestionIdx++;
+                    suggestionItems[activeSuggestionIdx].classList.add('active');
+                    suggestionItems[activeSuggestionIdx].scrollIntoView({ block: 'nearest' });
+                }
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (activeSuggestionIdx > 0) {
+                    suggestionItems[activeSuggestionIdx].classList.remove('active');
+                    activeSuggestionIdx--;
+                    suggestionItems[activeSuggestionIdx].classList.add('active');
+                    suggestionItems[activeSuggestionIdx].scrollIntoView({ block: 'nearest' });
+                }
+            } else if (e.key === 'Enter') {
+                if (activeSuggestionIdx !== -1) {
+                    e.preventDefault();
+                    suggestionItems[activeSuggestionIdx].click();
+                }
+            } else if (e.key === 'Escape') {
+                suggestionsDiv.classList.add('d-none');
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !suggestionsDiv.contains(e.target)) {
+                suggestionsDiv.classList.add('d-none');
+            }
+        });
+    };
+
+    const KBSearch = {
+        init: initLocalSearch,
+        highlight: highlightText,
+        clear: removeHighlights
+    };
+    window.KBSearch = KBSearch; // Support legacy index script references
+
     // Header HTML Template (Mega Menu / Navigation)
     const getHeaderHtml = (rootPrefix) => `
     <header class="smart-header">
@@ -367,12 +681,12 @@
                 sidebarContent.style.top = '100px';
 
                 // Map navigation links based on context
-                const kbCtx = window.KBNavigation.getContext(path);
+                const kbCtx = KBNavigation.getContext(path);
                 
                 let sidebarHtml = `<h5 class="sidebar-title mb-4"><i class="fa fa-folder-open me-2 text-primary"></i>Knowledge Base</h5>`;
                 sidebarHtml += `<div class="accordion accordion-flush" id="kbAccordion">`;
 
-                window.KBNavigation.categories.forEach((cat, index) => {
+                KBNavigation.categories.forEach((cat, index) => {
                     const isActiveCategory = (cat.name === kbCtx.name);
                     
                     if (cat.isSub) {
@@ -635,8 +949,8 @@
                 // H. Initialize instant search on category content
                 const localSearchInput = document.getElementById('kbLocalSearch');
                 const localSuggestions = document.getElementById('searchSuggestions');
-                if (localSearchInput && localSuggestions && window.KBSearch) {
-                    window.KBSearch.init(localSearchInput, localSuggestions, pageContent);
+                if (localSearchInput && localSuggestions && KBSearch) {
+                    KBSearch.init(localSearchInput, localSuggestions, pageContent);
                 }
             }
         }
@@ -673,6 +987,45 @@
                 const cleanInfo = infoText.replace(/\s+/g, '');
                 if (cleanInfo.includes(btnVal)) {
                     btn.classList.add('active-tab');
+                }
+            });
+        }
+
+        // Global Search Logic for Knowledge_Bank.html Hub Page
+        const globalSearchInput = document.getElementById('globalSearch');
+        const globalResultsList = document.getElementById('searchResults');
+        if (globalSearchInput && globalResultsList && KB_RESOURCES) {
+            globalSearchInput.addEventListener('input', function() {
+                const query = this.value.trim().toLowerCase();
+                globalResultsList.innerHTML = '';
+                
+                if (query.length < 2) {
+                    globalResultsList.classList.remove('active');
+                    return;
+                }
+
+                const filtered = KB_RESOURCES.filter(res => res.title.toLowerCase().includes(query));
+
+                if (filtered.length === 0) {
+                    globalResultsList.innerHTML = `<li class="p-3 text-muted text-center">No resources found matching "${this.value}"</li>`;
+                    globalResultsList.classList.add('active');
+                    return;
+                }
+
+                filtered.slice(0, 10).forEach(res => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="${res.url}">
+                        <div class="fw-bold">${res.title}</div>
+                        <div class="small text-muted">${res.cat}</div>
+                    </a>`;
+                    globalResultsList.appendChild(li);
+                });
+                globalResultsList.classList.add('active');
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!globalSearchInput.contains(e.target) && !globalResultsList.contains(e.target)) {
+                    globalResultsList.classList.remove('active');
                 }
             });
         }

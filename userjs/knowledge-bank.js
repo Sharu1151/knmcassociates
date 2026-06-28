@@ -956,26 +956,30 @@
         }
 
         // 4. Inject Unified modern sticky header
-        const headerEl = document.createElement('div');
-        headerEl.innerHTML = getHeaderHtml(rootPrefix);
-        const injectedHeader = headerEl.firstElementChild;
-        document.body.insertBefore(injectedHeader, document.body.firstChild);
+        if (!document.querySelector('header')) {
+            const headerEl = document.createElement('div');
+            headerEl.innerHTML = getHeaderHtml(rootPrefix);
+            const injectedHeader = headerEl.firstElementChild;
+            document.body.insertBefore(injectedHeader, document.body.firstChild);
 
-        // Bind dynamic scroll styling for transparency transitions
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                injectedHeader.classList.add('scrolled');
-            } else {
-                injectedHeader.classList.remove('scrolled');
-            }
-        };
-        window.addEventListener('scroll', handleScroll);
-        handleScroll();
+            // Bind dynamic scroll styling for transparency transitions
+            const handleScroll = () => {
+                if (window.scrollY > 50) {
+                    injectedHeader.classList.add('scrolled');
+                } else {
+                    injectedHeader.classList.remove('scrolled');
+                }
+            };
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+        }
 
         // 5. Inject Unified modern footer
-        const footerEl = document.createElement('div');
-        footerEl.innerHTML = getFooterHtml(rootPrefix);
-        document.body.appendChild(footerEl.firstElementChild);
+        if (!document.querySelector('footer')) {
+            const footerEl = document.createElement('div');
+            footerEl.innerHTML = getFooterHtml(rootPrefix);
+            document.body.appendChild(footerEl.firstElementChild);
+        }
 
         // Style circular action indicators inside active circular / tab pages
         const searchTD = document.getElementById('HomepagecontentControl_C_ctl00_SearchTD');

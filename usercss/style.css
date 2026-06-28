@@ -26,7 +26,8 @@
     scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
     overflow-x: hidden !important;
     width: 100%;
 }
@@ -49,19 +50,27 @@ body:not(.loaded) {
     width: 8px;
     height: 8px;
 }
+
 ::-webkit-scrollbar-track {
     background: var(--bg-secondary);
 }
+
 ::-webkit-scrollbar-thumb {
     background: var(--primary-accent);
     border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-color);
 }
 
 /* Global Typography System */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Outfit', sans-serif !important;
     color: var(--primary-color);
     font-weight: 700;
@@ -69,7 +78,12 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
 }
 
-p, span, li, a, td, th {
+p,
+span,
+li,
+a,
+td,
+th {
     font-family: 'Inter', sans-serif !important;
 }
 
@@ -92,7 +106,8 @@ a:hover {
 }
 
 /* Premium Header Overrides */
-header, .navbar-fixed-top {
+header,
+.navbar-fixed-top {
     position: fixed !important;
     top: 0;
     left: 0;
@@ -107,18 +122,26 @@ header, .navbar-fixed-top {
 }
 
 /* Clean Telerik Clutter Override */
-#form2, #form1 {
+#form2,
+#form1 {
     background-color: var(--bg-primary) !important;
 }
 
-.RadDock, .rdTable, .rdMiddle, .rdCenter, .rdContent {
+.RadDock,
+.rdTable,
+.rdMiddle,
+.rdCenter,
+.rdContent {
     border: none !important;
     background: transparent !important;
     padding: 0 !important;
     margin: 0 !important;
 }
 
-.rdTop, .rdBottom, .rdLeft, .rdRight {
+.rdTop,
+.rdBottom,
+.rdLeft,
+.rdRight {
     display: none !important;
 }
 
@@ -128,7 +151,7 @@ header, .navbar-fixed-top {
     display: flex;
     align-items: center;
     padding-top: 120px !important;
-    padding-bottom: 160px !important;
+    padding-bottom: 60px !important;
     background:
         linear-gradient(135deg, rgba(8, 16, 29, 0.82) 0%, rgba(15, 30, 54, 0.75) 50%, rgba(8, 16, 29, 0.88) 100%),
         url('../image/background.png') center center / cover no-repeat !important;
@@ -371,7 +394,11 @@ header, .navbar-fixed-top {
 }
 
 /* Premium Form Elements */
-input[type="text"], input[type="email"], input[type="password"], textarea, select {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
     width: 100%;
     padding: 14px 20px;
     font-size: 0.95rem;
@@ -383,7 +410,9 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
     transition: var(--transition-smooth);
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
     background-color: #FFF;
     border-color: var(--primary-accent);
     box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.15);
@@ -534,6 +563,7 @@ tr:hover td {
     background: var(--primary-accent) !important;
     box-shadow: 0px 0px 0px 7px rgba(197, 168, 128, 0.2) !important;
 }
+
 .whatsapp_btn .circle_waves {
     background-color: #25D366 !important;
 }
@@ -566,12 +596,29 @@ tr:hover td {
 }
 
 /* Staggered delay classes */
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
-.delay-6 { transition-delay: 0.6s; }
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.delay-4 {
+    transition-delay: 0.4s;
+}
+
+.delay-5 {
+    transition-delay: 0.5s;
+}
+
+.delay-6 {
+    transition-delay: 0.6s;
+}
 
 /* 2. Hero Interactive layout details */
 .intro-head .row {
@@ -618,9 +665,11 @@ tr:hover td {
     0% {
         transform: translate(0, 0) scale(1) rotate(0deg);
     }
+
     50% {
         transform: translate(40px, -60px) scale(1.1) rotate(15deg);
     }
+
     100% {
         transform: translate(-20px, 20px) scale(0.95) rotate(-15deg);
     }
@@ -653,9 +702,17 @@ tr:hover td {
 }
 
 @keyframes pulse {
-    0% { opacity: 0.3; }
-    50% { opacity: 1; }
-    100% { opacity: 0.3; }
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
 }
 
 /* 3. Hero Glassmorphic Dashboard Widget */
@@ -809,8 +866,13 @@ tr:hover td {
 }
 
 @keyframes float-metric {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-10px); }
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
 }
 
 .floating-metric-val {
@@ -1050,7 +1112,8 @@ tr:hover td {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0f1e36; /* Brand primary dark blue */
+    background-color: #0f1e36;
+    /* Brand primary dark blue */
     z-index: 99999999;
     display: flex;
     justify-content: center;
@@ -1103,7 +1166,8 @@ tr:hover td {
     font-family: 'Outfit', sans-serif !important;
     font-weight: 800;
     font-size: 1.65rem;
-    color: #c5a880; /* Gold */
+    color: #c5a880;
+    /* Gold */
     letter-spacing: 1px;
     text-shadow: 0 0 10px rgba(197, 168, 128, 0.5);
     line-height: 1;
@@ -1158,7 +1222,8 @@ tr:hover td {
     text-transform: uppercase;
     margin: 12px 0 2px 0;
     line-height: 1.2;
-    text-indent: 7px; /* Align text exactly due to letter-spacing */
+    text-indent: 7px;
+    /* Align text exactly due to letter-spacing */
 }
 
 .loader-subtitle {
@@ -1169,7 +1234,8 @@ tr:hover td {
     letter-spacing: 9px;
     text-transform: uppercase;
     margin: 0 0 28px 0;
-    text-indent: 9px; /* Align text exactly due to letter-spacing */
+    text-indent: 9px;
+    /* Align text exactly due to letter-spacing */
     opacity: 0.95;
 }
 
@@ -1205,23 +1271,45 @@ tr:hover td {
 
 /* Animations */
 @keyframes spinner-spin-clockwise {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes spinner-spin-counter {
-    0% { transform: rotate(360deg); }
-    100% { transform: rotate(0deg); }
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 @keyframes loading-bar-move {
-    0% { transform: translateX(-100px); }
-    100% { transform: translateX(150px); }
+    0% {
+        transform: translateX(-100px);
+    }
+
+    100% {
+        transform: translateX(150px);
+    }
 }
 
 @keyframes pulse-opacity {
-    0%, 100% { opacity: 0.45; }
-    50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 /* ==========================================================================
@@ -1230,7 +1318,7 @@ tr:hover td {
 
 /* 1. Global Forms, Selects, and Inputs */
 /* 1. Global Forms, Selects, and Inputs */
-#HomepagecontentControl_C input[type="text"], 
+#HomepagecontentControl_C input[type="text"],
 #HomepagecontentControl_C select,
 #tbl_forcss1 input[type="text"],
 #tbl_forcss1 select,
@@ -1255,7 +1343,7 @@ tr:hover td {
     outline: none !important;
 }
 
-#HomepagecontentControl_C input[type="text"]:focus, 
+#HomepagecontentControl_C input[type="text"]:focus,
 #HomepagecontentControl_C select:focus,
 #tbl_forcss1 input[type="text"]:focus,
 #tbl_forcss1 select:focus,
@@ -1299,10 +1387,10 @@ tr:hover td {
 }
 
 /* 2. Global Buttons Overrides */
-#HomepagecontentControl_C input[type="button"], 
+#HomepagecontentControl_C input[type="button"],
 #HomepagecontentControl_C input[type="submit"],
 #HomepagecontentControl_C button,
-#tbl_forcss1 input[type="button"], 
+#tbl_forcss1 input[type="button"],
 #tbl_forcss1 input[type="submit"],
 #tbl_forcss1 button,
 #btn_Search,
@@ -1319,13 +1407,14 @@ tr:hover td {
     transition: var(--transition-smooth) !important;
     font-size: 0.85rem !important;
     outline: none !important;
-    width: auto !important; /* Force auto-width to override narrow inline style properties */
+    width: auto !important;
+    /* Force auto-width to override narrow inline style properties */
 }
 
-#HomepagecontentControl_C input[type="button"]:hover, 
+#HomepagecontentControl_C input[type="button"]:hover,
 #HomepagecontentControl_C input[type="submit"]:hover,
 #HomepagecontentControl_C button:hover,
-#tbl_forcss1 input[type="button"]:hover, 
+#tbl_forcss1 input[type="button"]:hover,
 #tbl_forcss1 input[type="submit"]:hover,
 #tbl_forcss1 button:hover,
 #btn_Search:hover,
@@ -1337,8 +1426,8 @@ tr:hover td {
 }
 
 /* 3. Main Data Tables Styling */
-table.form-tab, 
-table.team-table, 
+table.form-tab,
+table.team-table,
 #myTable {
     border-collapse: collapse !important;
     width: 100% !important;
@@ -1349,9 +1438,9 @@ table.team-table,
     box-shadow: var(--shadow-soft) !important;
 }
 
-table.form-tab th, 
-table.team-table th, 
-#myTable th, 
+table.form-tab th,
+table.team-table th,
+#myTable th,
 #myTable tr.header {
     background-color: var(--primary-color, #0f1e36) !important;
     color: #FFFFFF !important;
@@ -1364,8 +1453,8 @@ table.team-table th,
     border: none !important;
 }
 
-table.form-tab td, 
-table.team-table td, 
+table.form-tab td,
+table.team-table td,
 #myTable td {
     padding: 14px 18px !important;
     border: none !important;
@@ -1376,14 +1465,14 @@ table.team-table td,
     transition: var(--transition-smooth) !important;
 }
 
-table.form-tab tr:hover td, 
-table.team-table tr:hover td, 
+table.form-tab tr:hover td,
+table.team-table tr:hover td,
 #myTable tr:hover td {
     background-color: var(--bg-secondary, rgba(197, 168, 128, 0.03)) !important;
 }
 
-table.form-tab tr:last-child td, 
-table.team-table tr:last-child td, 
+table.form-tab tr:last-child td,
+table.team-table tr:last-child td,
 #myTable tr:last-child td {
     border-bottom: none !important;
 }
@@ -1427,9 +1516,9 @@ ul.inner-icon-ul li a:hover {
 }
 
 /* 5. Mobile Layout Cleanup and Overflow Controls */
-#HomepagecontentControl_C table, 
-#HomepagecontentControl_C td, 
-#tbl_forcss1 table, 
+#HomepagecontentControl_C table,
+#HomepagecontentControl_C td,
+#tbl_forcss1 table,
 #tbl_forcss1 td {
     max-width: 100% !important;
 }
@@ -1455,6 +1544,7 @@ ul.inner-icon-ul li a:hover {
     .mega-dropdown {
         position: static !important;
     }
+
     .mega-menu-content {
         left: 5% !important;
         right: 5% !important;
@@ -1472,6 +1562,7 @@ ul.inner-icon-ul li a:hover {
         transform: translateY(10px);
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
+
     .mega-dropdown:hover .mega-menu-content {
         opacity: 1 !important;
         visibility: visible !important;
@@ -1583,7 +1674,8 @@ ul.inner-icon-ul li a:hover {
     transition: all 0.2s ease !important;
 }
 
-.alpha-btn.active, .alpha-btn:hover {
+.alpha-btn.active,
+.alpha-btn:hover {
     background: var(--primary-color, #0f1e36) !important;
     color: #FFFFFF !important;
     border-color: var(--primary-color, #0f1e36) !important;
@@ -1594,10 +1686,12 @@ ul.inner-icon-ul li a:hover {
     font-size: 0.9rem !important;
     color: var(--text-muted, #666) !important;
 }
+
 .kb-breadcrumb a {
     color: var(--primary-accent, #c5a880) !important;
     text-decoration: none !important;
 }
+
 .kb-breadcrumb a:hover {
     text-decoration: underline !important;
 }
@@ -1659,7 +1753,8 @@ ul.inner-icon-ul li a:hover {
 }
 
 /* Subpage page body background override */
-#form1, #form2 {
+#form1,
+#form2 {
     background-color: #f8fafc !important;
     min-height: 100vh !important;
 }
@@ -1683,17 +1778,18 @@ ul.inner-icon-ul li a:hover {
 }
 
 /* Remove card border when nested or empty to keep layout flat and clean */
-.RadDock, .RadDockZone {
+.RadDock,
+.RadDockZone {
     border: none !important;
     background: transparent !important;
 }
 
 /* Strip all Telerik RadDock legacy layout borders, backgrounds, shadows and lines */
-.rdTable, 
-.rdTable td, 
-.rdTable tr, 
-.rdContent, 
-.rdMiddle, 
+.rdTable,
+.rdTable td,
+.rdTable tr,
+.rdContent,
+.rdMiddle,
 .rdCenter,
 .rdTop,
 .rdBottom {
@@ -1703,19 +1799,22 @@ ul.inner-icon-ul li a:hover {
     box-shadow: none !important;
 }
 
-.rdLeft, .rdRight {
+.rdLeft,
+.rdRight {
     display: none !important;
 }
 
 /* Global Mobile Layout Table Overflow and Card Sizing Fixes */
 @media (max-width: 991px) {
-    #HomepagecontentControl_C table, 
+
+    #HomepagecontentControl_C table,
     #tbl_forcss1 table,
     .table,
     .table-responsive table {
-        min-width: auto !important; /* Force override of runtime 1000px force on mobile to prevent card stretch */
+        min-width: auto !important;
+        /* Force override of runtime 1000px force on mobile to prevent card stretch */
     }
-    
+
     /* Convert legacy form tables to clean flexbox lists on mobile devices */
     #tbl_forcss1 table tbody tr:not(.calc-res),
     #HomepagecontentControl_C table tbody tr:not(.calc-res) {
@@ -1728,7 +1827,7 @@ ul.inner-icon-ul li a:hover {
         border-bottom: 1px solid rgba(15, 30, 54, 0.05) !important;
         width: 100% !important;
     }
-    
+
     #tbl_forcss1 table tbody tr td,
     #HomepagecontentControl_C table tbody tr td {
         display: block !important;
@@ -1738,7 +1837,7 @@ ul.inner-icon-ul li a:hover {
         border: none !important;
         background: transparent !important;
     }
-    
+
     /* Section headers / full-width label rows conversion */
     #tbl_forcss1 table tbody tr td[colspan],
     #HomepagecontentControl_C table tbody tr td[colspan] {
@@ -1753,7 +1852,7 @@ ul.inner-icon-ul li a:hover {
         text-transform: uppercase !important;
         letter-spacing: 0.5px !important;
     }
-    
+
     /* Style form controls inside tables for consistency on mobile devices */
     #tbl_forcss1 table tbody tr td input[type="text"],
     #tbl_forcss1 table tbody tr td select,
@@ -1769,7 +1868,7 @@ ul.inner-icon-ul li a:hover {
         text-align: right !important;
         background-color: #ffffff !important;
     }
-    
+
     #tbl_forcss1 table tbody tr td select,
     #HomepagecontentControl_C table tbody tr td select {
         text-align-last: right !important;
@@ -1797,7 +1896,8 @@ ul.inner-icon-ul li a:hover {
 }
 
 #msform h2 {
-    display: none !important; /* Hide duplicate title */
+    display: none !important;
+    /* Hide duplicate title */
 }
 
 /* Category Pill Tabs Group styling */
@@ -1851,14 +1951,14 @@ ul.inner-icon-ul li a:hover {
 }
 
 /* Modern Form Row Grid for ample spacing and perfect wrap */
-#msform fieldset > .row {
+#msform fieldset>.row {
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
     gap: 20px !important;
     align-items: flex-end !important;
 }
 
-#msform fieldset > .row > div[class*="col-"] {
+#msform fieldset>.row>div[class*="col-"] {
     width: 100% !important;
     max-width: 100% !important;
     padding: 0 !important;
@@ -1979,7 +2079,7 @@ ul.inner-icon-ul li a:hover {
 }
 
 /* Table grid redesign */
-.RadGrid_Default, 
+.RadGrid_Default,
 .rgMasterTable {
     border: none !important;
     background: #ffffff !important;
@@ -1988,7 +2088,7 @@ ul.inner-icon-ul li a:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03) !important;
 }
 
-.RadGrid thead th, 
+.RadGrid thead th,
 .RadGrid .rgHeader {
     background-color: var(--primary-color) !important;
     color: #ffffff !important;
@@ -2040,15 +2140,18 @@ ul.inner-icon-ul li a:hover {
         width: auto !important;
         min-width: 750px !important;
     }
+
     #HomepagecontentControl_C .RadGrid tbody,
     #HomepagecontentControl_C .RadGrid thead,
     #HomepagecontentControl_C .RadGrid tr {
         display: table !important;
         width: 100% !important;
     }
+
     #HomepagecontentControl_C .RadGrid tr {
         display: table-row !important;
     }
+
     #HomepagecontentControl_C .RadGrid th,
     #HomepagecontentControl_C .RadGrid td {
         display: table-cell !important;
@@ -2056,6 +2159,7 @@ ul.inner-icon-ul li a:hover {
         padding: 12px 8px !important;
         background: transparent !important;
     }
+
     #HomepagecontentControl_C .RadGrid thead th {
         background-color: var(--primary-color) !important;
     }
@@ -2066,20 +2170,24 @@ ul.inner-icon-ul li a:hover {
     .top-section {
         text-align: center !important;
     }
+
     .top-section p {
         margin-left: auto !important;
         margin-right: auto !important;
     }
+
     .hero-pill {
         margin-left: auto !important;
         margin-right: auto !important;
     }
+
     .hero-actions {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         gap: 12px !important;
     }
+
     .hero-actions a {
         width: 100% !important;
         max-width: 400px !important;
@@ -2089,4 +2197,10 @@ ul.inner-icon-ul li a:hover {
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
+}
+
+/* Justify introduction narrative text on home page and about page */
+.work-text p,
+.about-profile p {
+    text-align: justify !important;
 }

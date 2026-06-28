@@ -1,5 +1,5 @@
 /**
- * Knowledge Bank Modernization - Shell Transformer & Layout Engine
+ * Knowledge Bank Modernization - Shell Transformer & Layout Engine (Links & Acts Only)
  */
 (function(window) {
     'use strict';
@@ -41,40 +41,22 @@
                             <a href="${rootPrefix}resource/Knowledge_Bank.html" class="nav-link dropdown-toggle active" id="knowledgeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Knowledge Bank</a>
                             <div class="dropdown-menu mega-menu-content p-4" aria-labelledby="knowledgeDropdown">
                                 <div class="row g-3">
-                                    <div class="col-lg-3 col-md-6 col-12">
-                                        <h6 class="mega-menu-title"><i class="fa fa-calculator me-2 text-primary"></i>Calculators</h6>
+                                    <div class="col-md-6 col-12">
+                                        <h6 class="mega-menu-title"><i class="fa fa-link me-2 text-primary"></i>Links</h6>
                                         <ul class="list-unstyled mega-menu-list">
-                                            <li><a href="${rootPrefix}resources/Calculators/GST_CALCULATOR/GST_CALCULATOR.html" class="dropdown-item">GST Calculator</a></li>
-                                            <li><a href="${rootPrefix}resources/Calculators/Tax_Calculator/cal_Income_Tax.html" class="dropdown-item">Income Tax Calculator</a></li>
-                                            <li><a href="${rootPrefix}resources/Calculators/TDS_Calculator/TDSCalculator2026.html" class="dropdown-item">TDS Calculator</a></li>
-                                            <li><a href="${rootPrefix}resource/Knowledge_Bank/Calculators.html" class="dropdown-item fw-bold text-primary">Browse All &rarr;</a></li>
+                                            <li><a href="${rootPrefix}resources/Links/Quick_Link/Quick_Link.html" class="dropdown-item">Quick Links</a></li>
+                                            <li><a href="${rootPrefix}resources/Links/important_links/important_links.html" class="dropdown-item">Important Links</a></li>
+                                            <li><a href="${rootPrefix}resources/Links/Vat_Links/Vat_Links.html" class="dropdown-item">GST/VAT Links</a></li>
+                                            <li><a href="${rootPrefix}resources/Links/EASE_OF_DOING_BUSINESS/EASE_OF_DOING_BUSINESS.html" class="dropdown-item">Ease Of Doing Business</a></li>
                                         </ul>
                                     </div>
-                                    <div class="col-lg-3 col-md-6 col-12">
-                                        <h6 class="mega-menu-title"><i class="fa fa-newspaper-o me-2 text-primary"></i>Bulletins</h6>
-                                        <ul class="list-unstyled mega-menu-list">
-                                            <li><a href="${rootPrefix}notificationsearch/Bulletins/Notification/BullNotification/Notification.html" class="dropdown-item">Notifications</a></li>
-                                            <li><a href="${rootPrefix}notificationsearch/Bulletins/Circular/BullNotification/Circular.html" class="dropdown-item">Circulars</a></li>
-                                            <li><a href="${rootPrefix}advancesearch/notification/Bulletins/RBISEBI/RBISEBI.html" class="dropdown-item">RBI & SEBI</a></li>
-                                            <li><a href="${rootPrefix}resource/Knowledge_Bank/Bulletins.html" class="dropdown-item fw-bold text-primary">Browse All &rarr;</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6 col-12">
-                                        <h6 class="mega-menu-title"><i class="fa fa-cogs me-2 text-primary"></i>Utilities</h6>
-                                        <ul class="list-unstyled mega-menu-list">
-                                            <li><a href="${rootPrefix}resources/Utilities/Rates_of_TDS/Rates_of_TDS.html" class="dropdown-item">TDS Rates</a></li>
-                                            <li><a href="${rootPrefix}resources/Utilities/Rates_of_Income_Tax/Rates_of_Income_Tax.html" class="dropdown-item">Income Tax Rates</a></li>
-                                            <li><a href="${rootPrefix}resources/Utilities/RATES_OF_DEPRECIATION/RATES_OF_DEPRECIATION.html" class="dropdown-item">Depreciation Rates</a></li>
-                                            <li><a href="${rootPrefix}resource/Knowledge_Bank/Utilities.html" class="dropdown-item fw-bold text-primary">Browse All &rarr;</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6 col-12">
-                                        <h6 class="mega-menu-title"><i class="fa fa-file-text-o me-2 text-primary"></i>Acts & Forms</h6>
+                                    <div class="col-md-6 col-12">
+                                        <h6 class="mega-menu-title"><i class="fa fa-book me-2 text-primary"></i>Acts</h6>
                                         <ul class="list-unstyled mega-menu-list">
                                             <li><a href="${rootPrefix}laws/-26/Income_Tax_Act.html" class="dropdown-item">Income Tax Act</a></li>
-                                            <li><a href="${rootPrefix}laws/-29/Income_Tax_Rules.html" class="dropdown-item">Income Tax Rules</a></li>
-                                            <li><a href="${rootPrefix}resources/Forms/Income_Tax_Forms/Income_Tax_Forms.html" class="dropdown-item">Income Tax Forms</a></li>
-                                            <li><a href="${rootPrefix}resource/Knowledge_Bank.html" class="dropdown-item fw-bold text-primary">Knowledge Hub &rarr;</a></li>
+                                            <li><a href="${rootPrefix}laws/-103/Companies_Act_2013.html" class="dropdown-item">Companies Act 2013</a></li>
+                                            <li><a href="${rootPrefix}laws/-164/Central_Goods_and_Services_Tax_Act_2017.html" class="dropdown-item">CGST Act</a></li>
+                                            <li><a href="${rootPrefix}resource/Knowledge_Bank/Acts.html" class="dropdown-item fw-bold text-primary">Browse All &rarr;</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -287,38 +269,103 @@
 
                 window.KBNavigation.categories.forEach((cat, index) => {
                     const isActiveCategory = (cat.name === kbCtx.name);
-                    sidebarHtml += `
-                        <div class="accordion-item border-0">
-                            <h2 class="accordion-header" id="heading${index}">
-                                <button class="accordion-button ${isActiveCategory ? '' : 'collapsed'} py-2 px-3 fw-bold rounded-2 text-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="${isActiveCategory ? 'true' : 'false'}" aria-controls="collapse${index}">
-                                    <i class="fa ${cat.icon} me-2 text-primary"></i> ${cat.name}
-                                </button>
-                            </h2>
-                            <div id="collapse${index}" class="accordion-collapse collapse ${isActiveCategory ? 'show' : ''}" aria-labelledby="heading${index}" data-bs-parent="#kbAccordion">
-                                <div class="accordion-body p-0 pt-2 ps-3">
-                                    <ul class="list-unstyled sidebar-sublinks">
-                    `;
-
-                    cat.items.forEach(sub => {
-                        const cleanUrl = sub.url.startsWith('../') ? sub.url.substring(3) : 'resources/' + sub.url;
-                        const finalUrl = `${rootPrefix}${cleanUrl}`;
-                        const isCurrentPage = pathLower.includes(sub.url.split('/').pop().toLowerCase());
-                        
+                    
+                    if (cat.isSub) {
                         sidebarHtml += `
-                            <li class="mb-2">
-                                <a href="${finalUrl}" class="nav-link py-1 px-2 rounded-2 ${isCurrentPage ? 'active fw-bold text-primary bg-primary-subtle' : ''}" style="font-size: 0.9rem;">
-                                    ${sub.name}
-                                </a>
-                            </li>
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header" id="heading${index}">
+                                    <button class="accordion-button ${isActiveCategory ? '' : 'collapsed'} py-2 px-3 fw-bold rounded-2 text-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="${isActiveCategory ? 'true' : 'false'}" aria-controls="collapse${index}">
+                                        <i class="fa ${cat.icon} me-2 text-primary"></i> ${cat.name}
+                                    </button>
+                                </h2>
+                                <div id="collapse${index}" class="accordion-collapse collapse ${isActiveCategory ? 'show' : ''}" aria-labelledby="heading${index}" data-bs-parent="#kbAccordion">
+                                    <div class="accordion-body p-0 pt-2">
+                                        <div class="accordion accordion-flush" id="kbSubAccordion">
                         `;
-                    });
 
-                    sidebarHtml += `
-                                    </ul>
+                        cat.subcategories.forEach((sub, subIndex) => {
+                            let hasActiveItem = false;
+                            sub.items.forEach(item => {
+                                if (pathLower.includes(item.url.split('/').pop().toLowerCase())) {
+                                    hasActiveItem = true;
+                                }
+                            });
+
+                            sidebarHtml += `
+                                <div class="accordion-item border-0 ps-3">
+                                    <h3 class="accordion-header" id="subheading${index}_${subIndex}">
+                                        <button class="accordion-button ${hasActiveItem ? '' : 'collapsed'} py-1 px-2 fw-semibold rounded-2 text-secondary text-start" style="font-size: 0.92rem;" type="button" data-bs-toggle="collapse" data-bs-target="#subcollapse${index}_${subIndex}" aria-expanded="${hasActiveItem ? 'true' : 'false'}" aria-controls="subcollapse${index}_${subIndex}">
+                                            ${sub.name}
+                                        </button>
+                                    </h3>
+                                    <div id="subcollapse${index}_${subIndex}" class="accordion-collapse collapse ${hasActiveItem ? 'show' : ''}" aria-labelledby="subheading${index}_${subIndex}" data-bs-parent="#kbSubAccordion">
+                                        <div class="accordion-body p-0 pt-1 ps-2">
+                                            <ul class="list-unstyled sidebar-sublinks">
+                            `;
+
+                            sub.items.forEach(item => {
+                                const cleanUrl = item.url.startsWith('../') ? item.url.substring(3) : item.url;
+                                const finalUrl = `${rootPrefix}${cleanUrl}`;
+                                const isCurrentPage = pathLower.includes(item.url.split('/').pop().toLowerCase());
+
+                                sidebarHtml += `
+                                    <li class="mb-1">
+                                        <a href="${finalUrl}" class="nav-link py-1 px-2 rounded-2 ${isCurrentPage ? 'active fw-bold text-primary bg-primary-subtle' : ''}" style="font-size: 0.86rem; display: block;">
+                                            ${item.name}
+                                        </a>
+                                    </li>
+                                `;
+                            });
+
+                            sidebarHtml += `
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+
+                        sidebarHtml += `
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    `;
+                        `;
+                    } else {
+                        // Flat category rendering (like Links)
+                        sidebarHtml += `
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header" id="heading${index}">
+                                    <button class="accordion-button ${isActiveCategory ? '' : 'collapsed'} py-2 px-3 fw-bold rounded-2 text-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="${isActiveCategory ? 'true' : 'false'}" aria-controls="collapse${index}">
+                                        <i class="fa ${cat.icon} me-2 text-primary"></i> ${cat.name}
+                                    </button>
+                                </h2>
+                                <div id="collapse${index}" class="accordion-collapse collapse ${isActiveCategory ? 'show' : ''}" aria-labelledby="heading${index}" data-bs-parent="#kbAccordion">
+                                    <div class="accordion-body p-0 pt-2 ps-3">
+                                        <ul class="list-unstyled sidebar-sublinks">
+                        `;
+
+                        cat.items.forEach(sub => {
+                            const cleanUrl = sub.url.startsWith('../') ? sub.url.substring(3) : sub.url;
+                            const finalUrl = `${rootPrefix}${cleanUrl}`;
+                            const isCurrentPage = pathLower.includes(sub.url.split('/').pop().toLowerCase());
+                            
+                            sidebarHtml += `
+                                <li class="mb-2">
+                                    <a href="${finalUrl}" class="nav-link py-1 px-2 rounded-2 ${isCurrentPage ? 'active fw-bold text-primary bg-primary-subtle' : ''}" style="font-size: 0.9rem;">
+                                        ${sub.name}
+                                    </a>
+                                </li>
+                            `;
+                        });
+
+                        sidebarHtml += `
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
                 });
 
                 sidebarHtml += `</div>`;
@@ -369,14 +416,38 @@
                 const accordionMob = mobileClone.querySelector('#kbAccordion');
                 if (accordionMob) {
                     accordionMob.id = 'kbAccordionMobile';
-                    accordionMob.querySelectorAll('.accordion-header button').forEach((btn, idx) => {
-                        btn.setAttribute('data-bs-target', `#collapse${idx}Mobile`);
-                        btn.setAttribute('aria-controls', `collapse${idx}Mobile`);
+                    accordionMob.querySelectorAll('.accordion-header button').forEach((btn) => {
+                        const originalTarget = btn.getAttribute('data-bs-target');
+                        if (originalTarget && originalTarget.startsWith('#collapse')) {
+                            btn.setAttribute('data-bs-target', originalTarget + 'Mobile');
+                            btn.setAttribute('aria-controls', originalTarget.substring(1) + 'Mobile');
+                        }
                     });
-                    accordionMob.querySelectorAll('.accordion-collapse').forEach((collapse, idx) => {
-                        collapse.id = `collapse${idx}Mobile`;
-                        collapse.setAttribute('data-bs-parent', '#kbAccordionMobile');
+                    accordionMob.querySelectorAll('.accordion-collapse').forEach((collapse) => {
+                        if (collapse.id && collapse.id.startsWith('collapse')) {
+                            collapse.id = collapse.id + 'Mobile';
+                            collapse.setAttribute('data-bs-parent', '#kbAccordionMobile');
+                        }
                     });
+
+                    // Also clone nested subaccordions if they exist in the mobile view
+                    const subAccordionMob = mobileClone.querySelector('#kbSubAccordion');
+                    if (subAccordionMob) {
+                        subAccordionMob.id = 'kbSubAccordionMobile';
+                        subAccordionMob.querySelectorAll('.accordion-header button').forEach((btn) => {
+                            const originalTarget = btn.getAttribute('data-bs-target');
+                            if (originalTarget && originalTarget.startsWith('#subcollapse')) {
+                                btn.setAttribute('data-bs-target', originalTarget + 'Mobile');
+                                btn.setAttribute('aria-controls', originalTarget.substring(1) + 'Mobile');
+                            }
+                        });
+                        subAccordionMob.querySelectorAll('.accordion-collapse').forEach((collapse) => {
+                            if (collapse.id && collapse.id.startsWith('subcollapse')) {
+                                collapse.id = collapse.id + 'Mobile';
+                                collapse.setAttribute('data-bs-parent', '#kbSubAccordionMobile');
+                            }
+                        });
+                    }
                 }
                 mobileDrawer.querySelector('.sidebar-clone').appendChild(mobileClone);
 
@@ -465,7 +536,7 @@
         footerEl.innerHTML = getFooterHtml(rootPrefix);
         document.body.appendChild(footerEl.firstElementChild);
 
-        // Style circular action indicators inside active circular / notifications tabs
+        // Style circular action indicators inside active circular / tab pages
         const searchTD = document.getElementById('HomepagecontentControl_C_ctl00_SearchTD');
         const lblInfo = document.getElementById('HomepagecontentControl_C_ctl00_lbl_Info');
         if (searchTD && lblInfo) {

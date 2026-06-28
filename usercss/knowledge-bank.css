@@ -1077,6 +1077,27 @@ body.kb-page .active-tab {
     transition: all 0.2s ease !important;
 }
 
+/* Premium Mobile Sidebar Drawer Toggle Button */
+.btn-kb-menu {
+    background-color: var(--primary-color, #0f1e36) !important;
+    color: var(--primary-accent, #c5a880) !important;
+    border: 1px solid var(--primary-accent, #c5a880) !important;
+    border-radius: var(--kb-radius-md, 12px) !important;
+    padding: 8px 16px !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: var(--kb-shadow-sm, 0 1px 3px rgba(0,0,0,0.05)) !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-kb-menu:hover, .btn-kb-menu:active, .btn-kb-menu:focus {
+    background-color: var(--primary-accent, #c5a880) !important;
+    color: var(--primary-color, #0f1e36) !important;
+    border-color: var(--primary-accent, #c5a880) !important;
+}
+
 /* ── Print ───────────────────────────────────────────────────────────────── */
 @media print {
     .kb-sidebar,

@@ -218,8 +218,8 @@
                         cell.style.width = '';
                         const text = cell.textContent ? cell.textContent.trim() : '';
                         const hasElements = cell.querySelector('input, select, button, a, img, span, strong, label, p');
-                        if (!text && !hasElements && cell.tagName.toLowerCase() === 'td') {
-                            cell.style.display = 'none'; // Collapse empty helper spacer columns
+                        if (!text && !hasElements) {
+                            cell.style.display = 'none'; // Hide empty cells and headers (fixes black blocks)
                         }
                     });
 
@@ -481,8 +481,8 @@
                 mobileHeaderRow.className = 'd-flex justify-content-between align-items-center d-lg-none mb-3';
                 
                 const mobileMenuBtn = document.createElement('button');
-                mobileMenuBtn.className = 'btn btn-outline-primary py-2 px-3 d-flex align-items-center gap-2';
-                mobileMenuBtn.innerHTML = `<i class="fa fa-bars"></i> Categories`;
+                mobileMenuBtn.className = 'btn btn-kb-menu d-flex align-items-center gap-2';
+                mobileMenuBtn.innerHTML = `<i class="fa fa-folder-open"></i> Browse Menu`;
                 mobileMenuBtn.setAttribute('data-bs-toggle', 'modal');
                 mobileMenuBtn.setAttribute('data-bs-target', '#kbMobileDrawer');
                 mobileHeaderRow.appendChild(mobileMenuBtn);

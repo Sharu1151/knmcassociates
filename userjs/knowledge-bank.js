@@ -481,6 +481,7 @@
                 mobileHeaderRow.className = 'd-flex justify-content-between align-items-center d-lg-none mb-3';
                 
                 const mobileMenuBtn = document.createElement('button');
+                mobileMenuBtn.setAttribute('type', 'button');
                 mobileMenuBtn.className = 'btn btn-kb-menu d-flex align-items-center gap-2';
                 mobileMenuBtn.innerHTML = `<i class="fa fa-folder-open"></i> Browse Menu`;
                 mobileMenuBtn.setAttribute('data-bs-toggle', 'modal');

@@ -656,8 +656,8 @@ setTimeout("curTime()",1000)
                     <td valign="top" style="width:100%;" >
                      
                         <table id='tbl_forcss1' cssclass='table-responsive' style='width:100%;' ><tr><td align='center'><html><head>
-<title>Calculator</title>  
-   
+<title>GST Calculator</title>
+
 <script language="javascript" type="text/javascript">
 
     function cleartextboxes() {
@@ -1015,251 +1015,527 @@ setTimeout("curTime()",1000)
         }
     }
 </script>
-  
-  
-
-  
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../../../../ip.webtel.in/hra/css/calc_style.css">
-
-
-
-<link rel="stylesheet" href="css/jquery-ui.html">
-
-<script src="../../../../ip.webtel.in/hra/js/jquery-ui.js"></script>
 
 <style>
-@media(max-width:998px){
-.gst-calc th,
-.gst-calc td{
-    font-size: 13px;
+/* Modernized GST Calculator CSS Rules */
+.calc-wrapper {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid #eef2f6;
+    overflow: hidden;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Outfit', 'Inter', sans-serif;
 }
-#HomepagecontentControl_C{overflow: auto !important;}
+
+.calc-header-banner {
+    background: linear-gradient(135deg, var(--primary-color, #18427d) 0%, #102d55 100%);
+    padding: 2.5rem 2rem;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    border-bottom: 4px solid var(--primary-accent, #c5a059);
+}
+
+.calc-header-banner h2 {
+    font-weight: 800;
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.calc-header-banner p {
+    color: #93c5fd;
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.gst-calc-container {
+    padding: 2rem;
+}
+
+/* Table styling for Desktop */
+.gst-modern-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 2rem;
+}
+
+.gst-modern-table thead th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    padding: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    text-align: center;
+}
+
+.gst-modern-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.gst-modern-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.gst-modern-table tbody td {
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid #edf2f7;
+    vertical-align: middle;
+}
+
+/* Custom form inputs inside table */
+.gst-modern-table .form-control,
+.gst-modern-table select.form-control-static {
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    background-color: #ffffff !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    height: 42px !important;
+    box-sizing: border-box;
+}
+
+.gst-modern-table .form-control:focus,
+.gst-modern-table select.form-control-static:focus {
+    border-color: var(--primary-color, #18427d) !important;
+    box-shadow: 0 0 0 3px rgba(24, 66, 125, 0.15) !important;
+    outline: none !important;
+}
+
+.gst-modern-table select.form-control-static {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23475569'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+    background-size: 16px !important;
+    padding-right: 32px !important;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Muted / output fields */
+.gst-modern-table .form-control[readonly] {
+    background-color: #f1f5f9 !important;
+    color: #475569 !important;
+    font-weight: 700 !important;
+    border-color: #e2e8f0 !important;
+    cursor: not-allowed;
+    box-shadow: none !important;
+}
+
+/* Totals Dashboard Cards */
+.totals-dashboard {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+@media (max-width: 1200px) {
+    .totals-dashboard {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .totals-dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .totals-dashboard {
+        grid-template-columns: 1fr;
+    }
+}
+
+.total-metric-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.25rem 1rem;
+    text-align: right;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.total-metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.total-metric-card.grand-total {
+    background: linear-gradient(135deg, #18427d 0%, #102d55 100%);
+    border-color: #102d55;
+    color: #ffffff;
+}
+
+.total-metric-card.grand-total .metric-title {
+    color: #93c5fd;
+}
+
+.total-metric-card.grand-total .metric-value {
+    color: #ffffff;
+}
+
+.metric-title {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.metric-value {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0f172a;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+}
+
+/* Action button area */
+.action-area {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1.25rem;
+    border-top: 1px solid #edf2f7;
+}
+
+.btn-modern-reset {
+    background-color: #ef4444 !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 0.75rem 2.25rem !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease, transform 0.1s ease !important;
+    box-shadow: 0 4px 6px rgba(239, 68, 68, 0.15) !important;
+}
+
+.btn-modern-reset:hover {
+    background-color: #dc2626 !important;
+    transform: translateY(-1px);
+}
+
+.btn-modern-reset:active {
+    transform: translateY(0);
+}
+
+/* Responsive design - Mobile layout */
+@media (max-width: 991px) {
+    .gst-modern-table, 
+    .gst-modern-table tbody, 
+    .gst-modern-table tr, 
+    .gst-modern-table td {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .gst-modern-table thead {
+        display: none !important; /* Hide column headers on mobile */
+    }
+    
+    .gst-modern-table tr {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 14px !important;
+        padding: 1.25rem !important;
+        margin-bottom: 1.5rem !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03) !important;
+        position: relative;
+    }
+    
+    .gst-modern-table tr::before {
+        content: "Line Item " attr(data-row);
+        display: block;
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: #18427d;
+        border-bottom: 2px solid #f1f5f9;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .gst-modern-table td {
+        border: none !important;
+        padding: 0.5rem 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        border-bottom: 1px dashed #f1f5f9 !important;
+    }
+    
+    .gst-modern-table td:last-child {
+        border-bottom: none !important;
+    }
+    
+    .gst-modern-table td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        color: #475569;
+        font-size: 0.8rem;
+        width: 45%;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .gst-modern-table td > * {
+        width: 50% !important;
+        max-width: 50% !important;
+        text-align: right !important;
+    }
+    
+    .gst-modern-table td select.form-control-static {
+        text-align-last: right !important;
+        padding-right: 28px !important;
+    }
+}
 </style>
 </head>
 <body>
 
-  <br>
-<div class="container-fluid">
- <div class="col-md-12">
+<div class="calc-wrapper">
+    <div class="calc-header-banner">
+        <h2>GST Calculator</h2>
+        <p>Perform precise tax computations for Inter-State and Intra-State sales dynamically.</p>
+    </div>
+    
+    <div class="gst-calc-container">
+        <table class="gst-modern-table">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Type Of Sale</th>
+                    <th style="width: 11%;">Rate OF Tax</th>
+                    <th style="width: 12%;">Taxable Amount</th>
+                    <th style="width: 12%;">Total Tax Amount</th>
+                    <th style="width: 10%;">IGST</th>
+                    <th style="width: 10%;">CGST</th>
+                    <th style="width: 10%;">SGST</th>
+                    <th style="width: 10%;">Rate of Cess</th>
+                    <th style="width: 10%;">CESS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-row="1">
+                    <td data-label="Type Of Sale">
+                        <select class="form-control-static" id="drptype" onchange="return calculatetax();">
+                            <option value="1">Inter State Sale</option>
+                            <option value="2">Intra State Sale</option>
+                        </select>
+                    </td>
+                    <td data-label="Rate Of Tax">
+                        <select class="form-control-static" id="drprate1" onchange="return calculatetax();">
+                            <option value="0">select....</option>
+                            <option value="0.25">0.25</option>
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value="12">12</option>
+                            <option value="18">18</option>
+                            <option value="28">28</option>
+                        </select>
+                    </td>
+                    <td data-label="Taxable Amount"><input class="form-control" id="txtamt1" onblur="return calculatetax();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
+                    <td data-label="Total Tax Amount"><input class="form-control" id="tottaxamt1" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="IGST"><input class="form-control" id="txtigst1" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="CGST"><input class="form-control" id="txtcgst1" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="SGST"><input class="form-control" id="txtsgst1" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="Rate of Cess"><input class="form-control" id="txttaxcess1" onblur="return calculatetax();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
+                    <td data-label="CESS"><input class="form-control" id="txtcess1" style="text-align:right;" readonly="" type="text"></td>
+                </tr>
 
- 
- 
- 
-  <div class="row">
- <div class="col-lg-12 col-md-12">
- <div class="calc_div">
- 
- 
- 
- 
- <div class="button_div">
- 
- <a href="#" target="_self"> GST Calculator </a>
- 
- </div>
- <div class="table-responsive">
+                <tr data-row="2">
+                    <td data-label="Type Of Sale">
+                        <select class="form-control-static" id="drptype2" onchange="return calculatetax2();">
+                            <option value="1">Inter State Sale</option>
+                            <option value="2">Intra State Sale</option>
+                        </select>
+                    </td>
+                    <td data-label="Rate Of Tax">
+                        <select class="form-control-static" id="drprate2" onchange="return calculatetax2();">
+                            <option value="0">select....</option>
+                            <option value="0.25">0.25</option>
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value="12">12</option>
+                            <option value="18">18</option>
+                            <option value="28">28</option>
+                        </select>
+                    </td>
+                    <td data-label="Taxable Amount"><input class="form-control" id="txtamt2" onblur="return calculatetax2();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
+                    <td data-label="Total Tax Amount"><input class="form-control" id="tottaxamt2" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="IGST"><input class="form-control" id="txtigst2" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="CGST"><input class="form-control" id="txtcgst2" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="SGST"><input class="form-control" id="txtsgst2" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="Rate of Cess"><input class="form-control" id="txttaxcess2" onblur="return calculatetax2();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
+                    <td data-label="CESS"><input class="form-control" id="txtcess2" style="text-align:right;" readonly="" type="text"></td>
+                </tr>
 
-<table class="table center-block gst-calc">
-<thead>
-<tr>
-<th style="text-align:center;" class="gst-calc1">Type Of Sale</th>
-<th style="text-align:center;" class="gst-calc2">Rate OF Tax</th>
-<th style="text-align:center;" class="gst-calc3">Taxable Amount</th>
-<th style="text-align:center;" class="gst-calc4">Total Tax Amount</th>
-<th style="text-align:center;" class="gst-calc5">IGST</th>
-<th style="text-align:center;" class="gst-calc6">CGST</th>
-<th style="text-align:center;" class="gst-calc7">SGST</th>
-<th style="text-align:center;" class="gst-calc8">Rate of Cess</th>
-<th style="text-align:center;" class="gst-calc9">CESS</th>
+                <tr data-row="3">
+                    <td data-label="Type Of Sale">
+                        <select class="form-control-static" id="drptype3" onchange="return calculatetax3();">
+                            <option value="1">Inter State Sale</option>
+                            <option value="2">Intra State Sale</option>
+                        </select>
+                    </td>
+                    <td data-label="Rate Of Tax">
+                        <select class="form-control-static" id="drprate3" onchange="return calculatetax3();">
+                            <option value="0">select....</option>
+                            <option value="0.25">0.25</option>
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value="12">12</option>
+                            <option value="18">18</option>
+                            <option value="28">28</option>
+                        </select>
+                    </td>
+                    <td data-label="Taxable Amount"><input class="form-control" id="txtamt3" onblur="return calculatetax3();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
+                    <td data-label="Total Tax Amount"><input class="form-control" id="tottaxamt3" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="IGST"><input class="form-control" id="txtigst3" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="CGST"><input class="form-control" id="txtcgst3" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="SGST"><input class="form-control" id="txtsgst3" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="Rate of Cess"><input class="form-control" id="txttaxcess3" onblur="return calculatetax3();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
+                    <td data-label="CESS"><input class="form-control" id="txtcess3" style="text-align:right;" readonly="" type="text"></td>
+                </tr>
 
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<select class=" form-control-static" id="drptype" onchange="return calculatetax();">
-<option value="1">Inter State Sale
-<option value="2">Intra State Sale
-</select>
-</td>
-<td> <select class=" form-control-static" id="drprate1" onchange="return calculatetax();">
-<option value="0">select....
-<option value="0.25">0.25
-<option value="3">3
-<option value="5">5
-<option value="12">12
-<option value="18">18
-<option value="28">28
-</select></td>
-<td><input class="form-control" id="txtamt1" onblur="return calculatetax();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
-<td><input class="form-control" id="tottaxamt1" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtigst1" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtcgst1" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtsgst1" style="text-align:right;" readonly="" type="text"></td>
-<td><input class="form-control" id="txttaxcess1" onblur="return calculatetax();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
- <td><input class="form-control" id="txtcess1" style="text-align:right;" readonly="" type="text"></td>
+                <tr data-row="4">
+                    <td data-label="Type Of Sale">
+                        <select class="form-control-static" id="drptype4" onchange="return calculatetax4();">
+                            <option value="1">Inter State Sale</option>
+                            <option value="2">Intra State Sale</option>
+                        </select>
+                    </td>
+                    <td data-label="Rate Of Tax">
+                        <select class="form-control-static" id="drprate4" onchange="return calculatetax4();">
+                            <option value="0">select....</option>
+                            <option value="0.25">0.25</option>
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value="12">12</option>
+                            <option value="18">18</option>
+                            <option value="28">28</option>
+                        </select>
+                    </td>
+                    <td data-label="Taxable Amount"><input class="form-control" id="txtamt4" onblur="return calculatetax4();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
+                    <td data-label="Total Tax Amount"><input class="form-control" id="tottaxamt4" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="IGST"><input class="form-control" id="txtigst4" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="CGST"><input class="form-control" id="txtcgst4" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="SGST"><input class="form-control" id="txtsgst4" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="Rate of Cess"><input class="form-control" id="txttaxcess4" onblur="return calculatetax4();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
+                    <td data-label="CESS"><input class="form-control" id="txtcess4" style="text-align:right;" readonly="" type="text"></td>
+                </tr>
 
-</tr>
+                <tr data-row="5">
+                    <td data-label="Type Of Sale">
+                        <select class="form-control-static" id="drptype5" onchange="return calculatetax5();">
+                            <option value="1">Inter State Sale</option>
+                            <option value="2">Intra State Sale</option>
+                        </select>
+                    </td>
+                    <td data-label="Rate Of Tax">
+                        <select class="form-control-static" id="drprate5" onchange="return calculatetax5();">
+                            <option value="0">select....</option>
+                            <option value="0.25">0.25</option>
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value="12">12</option>
+                            <option value="18">18</option>
+                            <option value="28">28</option>
+                        </select>
+                    </td>
+                    <td data-label="Taxable Amount"><input class="form-control" id="txtamt5" onblur="return calculatetax5();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
+                    <td data-label="Total Tax Amount"><input class="form-control" id="tottaxamt5" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="IGST"><input class="form-control" id="txtigst5" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="CGST"><input class="form-control" id="txtcgst5" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="SGST"><input class="form-control" id="txtsgst5" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="Rate of Cess"><input class="form-control" id="txttaxcess5" onblur="return calculatetax5();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
+                    <td data-label="CESS"><input class="form-control" id="txtcess5" style="text-align:right;" readonly="" type="text"></td>
+                </tr>
 
-<tr>
-<td>
-<select class=" form-control-static" id="drptype2" onchange="return calculatetax2();">
-<option value="1">Inter State Sale
-<option value="2">Intra State Sale
-</select>
-</td>
-<td>
- <select class=" form-control-static" id="drprate2" onchange="return calculatetax2();">
- <option value="0">select....
-<option value="0.25">0.25
-<option value="3">3
-<option value="5">5
-<option value="12">12
-<option value="18">18
-<option value="28">28
-</select></td>
-<td><input class="form-control" id="txtamt2" onkeypress="return DigitOnly(event);" onblur="return calculatetax2();" style="text-align:right;" type="text"></td>
-<td><input class="form-control" id="tottaxamt2" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtigst2" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtcgst2" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtsgst2" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txttaxcess2" onblur="return calculatetax2();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
-<td><input class="form-control" id="txtcess2" style="text-align:right;" readonly="" type="text"></td>
+                <tr data-row="6">
+                    <td data-label="Type Of Sale">
+                        <select class="form-control-static" id="drptype6" onchange="return calculatetax6();">
+                            <option value="1">Inter State Sale</option>
+                            <option value="2">Intra State Sale</option>
+                        </select>
+                    </td>
+                    <td data-label="Rate Of Tax">
+                        <select class="form-control-static" id="drprate6" onchange="return calculatetax6();">
+                            <option value="0">select....</option>
+                            <option value="0.25">0.25</option>
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value="12">12</option>
+                            <option value="18">18</option>
+                            <option value="28">28</option>
+                        </select>
+                    </td>
+                    <td data-label="Taxable Amount"><input class="form-control" id="txtamt6" onblur="return calculatetax6();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
+                    <td data-label="Total Tax Amount"><input class="form-control" id="tottaxamt6" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="IGST"><input class="form-control" id="txtigst6" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="CGST"><input class="form-control" id="txtcgst6" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="SGST"><input class="form-control" id="txtsgst6" style="text-align:right;" readonly="" type="text"></td>
+                    <td data-label="Rate of Cess"><input class="form-control" id="txttaxcess6" onblur="return calculatetax6();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
+                    <td data-label="CESS"><input class="form-control" id="txtcess6" style="text-align:right;" readonly="" type="text"></td>
+                </tr>
+            </tbody>
+        </table>
 
-</tr>
+        <!-- Dashboard Totals Grid -->
+        <div class="totals-dashboard">
+            <div class="total-metric-card">
+                <span class="metric-title">Total Taxable</span>
+                <span class="metric-value" id="totamt">0.00</span>
+            </div>
+            <div class="total-metric-card">
+                <span class="metric-title">Total CGST</span>
+                <span class="metric-value" id="totcgst">0.00</span>
+            </div>
+            <div class="total-metric-card">
+                <span class="metric-title">Total SGST</span>
+                <span class="metric-value" id="totsgst">0.00</span>
+            </div>
+            <div class="total-metric-card">
+                <span class="metric-title">Total IGST</span>
+                <span class="metric-value" id="totigst">0.00</span>
+            </div>
+            <div class="total-metric-card">
+                <span class="metric-title">Total Cess</span>
+                <span class="metric-value" id="totcess">0.00</span>
+            </div>
+            <div class="total-metric-card grand-total">
+                <span class="metric-title">Grand Total Tax</span>
+                <span class="metric-value" id="tottax">0.00</span>
+            </div>
+        </div>
 
-<tr>
-<td>
-<select class="form-control-static" id="drptype3" onchange="return calculatetax3();">
-<option value="1">Inter State Sale
-<option value="2">Intra State Sale
-</select>
-</td>
-<td> <select class="form-control-static" id="drprate3" onchange="return calculatetax3(); ">
-<option value="0">select....
-<option value="0.25">0.25
-<option value="3">3
-<option value="5">5
-<option value="12">12
-<option value="18">18
-<option value="28">28
-</select></td>
-<td><input class="form-control" id="txtamt3" onblur="return calculatetax3();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
-<td><input class="form-control" id="tottaxamt3" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtigst3" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtcgst3" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtsgst3" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txttaxcess3" onblur="return calculatetax3();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
-
- <td><input class="form-control" id="txtcess3" style="text-align:right;" readonly="" type="text"></td>
-
-</tr>
-
-<tr>
-<td>
-<select class=" form-control-static" id="drptype4" onchange="return calculatetax4();">
-<option value="1">Inter State Sale
-<option value="2">Intra State Sale
-</select>
-</td>
-<td> <select class=" form-control-static" id="drprate4" onchange="return calculatetax4();">
-<option value="0">select....
-<option value="0.25">0.25
-<option value="3">3
-<option value="5">5
-<option value="12">12
-<option value="18">18
-<option value="28">28
-</select></td>
-<td><input class="form-control" id="txtamt4" onblur="return calculatetax4();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
-<td><input class="form-control" id="tottaxamt4" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtigst4" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtcgst4" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtsgst4" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txttaxcess4" onblur="return calculatetax4();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
-
- <td><input class="form-control" id="txtcess4" style="text-align:right;" readonly="" type="text"></td>
-
-</tr>
-<tr>
-<td>
-<select class="form-control-static" id="drptype5" onchange="return calculatetax5();">
-<option value="1">Inter State Sale
-<option value="2">Intra State Sale
-</select>
-</td>
-<td> <select class="form-control-static" id="drprate5" onchange="return calculatetax5();">
-<option value="0">select....
-<option value="0.25">0.25
-<option value="3">3
-<option value="5">5
-<option value="12">12
-<option value="18">18
-<option value="28">28
-</select></td>
-<td><input class="form-control" id="txtamt5" onblur="return calculatetax5();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
-<td><input class="form-control" id="tottaxamt5" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtigst5" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtcgst5" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtsgst5" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txttaxcess5" onblur="return calculatetax5();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
-
- <td><input class="form-control" id="txtcess5" style="text-align:right;" readonly="" type="text"></td>
-
-</tr>
-<tr>
-<td>
-<select class=" form-control-static" id="drptype6" onchange="return calculatetax6();">
-<option value="1">Inter State Sale
-<option value="2">Intra State Sale
-</select>
-</td>
-<td> <select class=" form-control-static" id="drprate6" onchange="return calculatetax6();">
-<option value="0">select....
-<option value="0.25">0.25
-<option value="3">3
-<option value="5">5
-<option value="12">12
-<option value="18">18
-<option value="28">28
-</select></td>
-<td><input class="form-control" id="txtamt6" onblur="return calculatetax6();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
-<td><input class="form-control" id="tottaxamt6" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtigst6" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtcgst6" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txtsgst6" style="text-align:right;" readonly="" type="text"></td>
- <td><input class="form-control" id="txttaxcess6" onblur="return calculatetax6();" onkeypress="return DigitOnly(event);" style="text-align:right;" type="text"></td>
-
- <td><input class="form-control" id="txtcess6" style="text-align:right;" readonly="" type="text"></td>
-
-</tr>
-<tr class="calc-res"><td colspan="2">&nbsp;
-
-</td> <td align="left"> <h6 class="left">Total Amount :<span id="totamt" style="text-align:right;float:right;text-decoration:underline;"></span> </h6>  </td>
- <td align="left"> <h6 class="left">Total Tax : <span id="tottax" style="text-align:right;float:right;text-decoration:underline;"></span> </h6></td>
- <td align="left"> <h6 class="left">Total IGST : <span id="totigst" style="text-align:right;float:right;text-decoration:underline;"></span></h6></td>
- <td align="left"><h6 class="left">Total CGST : <span id="totcgst" style="text-align:right;float:right;text-decoration:underline;"></span></h6>  </td>
- <td align="left"><h6 class="left">Total SGST : <span id="totsgst" style="text-align:right;float:right;text-decoration:underline;"></span></h6> </td>
- <td>&nbsp;</td>
- <td align="left"><h6 class="left">Total CESS : <span id="totcess" style="text-align:right;float:right;text-decoration:underline;"></span></h6></td>
- </tr>
- <tr><td colspan="9" align="right">
- <br>
- <input class="btn-danger" onclick="return cleartextboxes();" value="Reset" type="button">
- 
- </td></tr>
-</tbody>
-</table>
-
+        <div class="action-area">
+            <button class="btn btn-modern-reset" onclick="return cleartextboxes();" type="button">Reset Calculator</button>
+        </div>
+    </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
 
 </body></html></td></tr></table>
                     </td>

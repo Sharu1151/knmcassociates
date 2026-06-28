@@ -320,10 +320,7 @@
                             colActions.appendChild(searchBtn);
                         }
                         if (homeBtn) {
-                            homeBtn.className = 'btn btn-outline-secondary px-3 py-2 fw-semibold d-flex align-items-center justify-content-center';
-                            homeBtn.style.width = 'auto';
-                            homeBtn.style.height = 'auto';
-                            colActions.appendChild(homeBtn);
+                            homeBtn.style.display = 'none';
                         }
                         if (backBtn) {
                             backBtn.className = 'btn btn-outline-secondary px-3 py-2 fw-semibold d-flex align-items-center justify-content-center';

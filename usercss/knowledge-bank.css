@@ -1098,6 +1098,16 @@ body.kb-page .active-tab {
     border-color: var(--primary-accent, #c5a880) !important;
 }
 
+/* Ensure the sidebar accordion menu is visible inside the mobile modal drawer */
+.sidebar-clone .kb-sidebar {
+    display: block !important;
+    position: static !important;
+    max-height: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
 /* ── Print ───────────────────────────────────────────────────────────────── */
 @media print {
     .kb-sidebar,

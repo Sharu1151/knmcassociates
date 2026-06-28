@@ -121,7 +121,7 @@
     </footer>
     `;
 
-    document.addEventListener('DOMContentLoaded', () => {
+    const initKnowledgeBank = () => {
         const path = window.location.pathname;
         const pathLower = path.toLowerCase();
 
@@ -553,5 +553,11 @@
         setTimeout(() => {
             document.body.classList.add('loaded');
         }, 50);
-    });
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initKnowledgeBank);
+    } else {
+        initKnowledgeBank();
+    }
 })(window);

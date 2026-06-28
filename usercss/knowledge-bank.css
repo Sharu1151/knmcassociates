@@ -1153,6 +1153,21 @@ body.kb-page .active-tab {
     box-shadow: var(--kb-shadow-md, 0 4px 12px rgba(15,30,54,0.08)) !important;
 }
 
+/* Force single-column stacking for mobile viewports to prevent overflow cutoff */
+@media (max-width: 767.98px) {
+    .inner-icon-ul, .inner-ul {
+        grid-template-columns: 1fr !important;
+        margin: var(--kb-space-md, 16px) auto !important;
+    }
+}
+
+/* Prevent legacy wrapper tables from causing horizontal page layout expansion on mobile */
+.kb-content-area table[id^="tbl_forcss"] {
+    width: 100% !important;
+    display: block !important;
+    overflow-x: auto !important;
+}
+
 /* ── Print ───────────────────────────────────────────────────────────────── */
 @media print {
     .kb-sidebar,

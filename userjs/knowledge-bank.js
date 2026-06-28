@@ -223,6 +223,15 @@
                         }
                     });
 
+                    // Hide empty legacy table header rows completely (prevents empty dark navy blocks)
+                    const thead = tbl.querySelector('thead');
+                    if (thead) {
+                        const hasText = thead.textContent.trim().replace(/\xa0/g, '').length > 0;
+                        if (!hasText) {
+                            thead.style.display = 'none';
+                        }
+                    }
+
                     // Wrap tables in responsive scrollers
                     if (tbl.parentElement && !tbl.parentElement.classList.contains('table-responsive')) {
                         const wrapper = document.createElement('div');
@@ -510,6 +519,9 @@
 
                 // Clone accordion menu for Mobile touch navigation
                 const mobileClone = sidebarContent.cloneNode(true);
+                const mobTitle = mobileClone.querySelector('.sidebar-title');
+                if (mobTitle) mobTitle.remove();
+
                 const accordionMob = mobileClone.querySelector('#kbAccordion');
                 if (accordionMob) {
                     accordionMob.id = 'kbAccordionMobile';

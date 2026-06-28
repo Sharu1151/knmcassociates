@@ -1,0 +1,240 @@
+/* ==========================================================================
+   Knowledge Bank Design System & Responsive Shell Layout
+   ========================================================================== */
+
+/* Design Tokens & Theme Variables */
+:root {
+    --kb-primary: #0f1e36;
+    --kb-primary-light: #1e3a8a;
+    --kb-secondary: #c5a880;
+    --kb-neutral-50: #f8fafc;
+    --kb-neutral-100: #f1f5f9;
+    --kb-neutral-200: #e2e8f0;
+    --kb-neutral-300: #cbd5e1;
+    --kb-neutral-700: #334155;
+    --kb-neutral-900: #0f172a;
+    --kb-shadow: 0 4px 20px rgba(15, 30, 54, 0.05);
+    --kb-radius: 12px;
+}
+
+/* Page Loader Fade-in Transition */
+body.loaded {
+    opacity: 1 !important;
+}
+
+/* Shell Layout Containers */
+.kb-container {
+    padding-top: 2rem !important;
+    padding-bottom: 3rem !important;
+}
+
+.kb-card {
+    background: #ffffff !important;
+    border-radius: var(--kb-radius) !important;
+    box-shadow: var(--kb-shadow) !important;
+    border: 1px solid var(--kb-neutral-200) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Desktop Sticky Sidebar Navigation */
+.kb-sidebar {
+    background: #ffffff !important;
+    border-radius: var(--kb-radius) !important;
+    border: 1px solid var(--kb-neutral-200) !important;
+    box-shadow: var(--kb-shadow) !important;
+    z-index: 100 !important;
+}
+
+.sidebar-title {
+    font-size: 1.1rem !important;
+    font-weight: 800 !important;
+    color: var(--kb-primary) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    border-bottom: 2px solid var(--kb-neutral-100) !important;
+    padding-bottom: 12px !important;
+}
+
+/* Accordion categories styling */
+#kbAccordion .accordion-item {
+    background: transparent !important;
+}
+
+#kbAccordion .accordion-button {
+    font-size: 0.95rem !important;
+    color: var(--kb-neutral-700) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+}
+
+#kbAccordion .accordion-button:not(.collapsed) {
+    color: var(--kb-primary) !important;
+    background-color: var(--kb-neutral-50) !important;
+}
+
+#kbAccordion .accordion-button::after {
+    background-size: 1rem !important;
+    transition: transform 0.2s ease !important;
+}
+
+.sidebar-sublinks li a {
+    color: var(--kb-neutral-700) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    border-left: 2px solid transparent !important;
+    padding-left: 12px !important;
+}
+
+.sidebar-sublinks li a:hover {
+    color: var(--kb-primary-light) !important;
+    border-left-color: var(--kb-secondary) !important;
+    background-color: var(--kb-neutral-50) !important;
+}
+
+.sidebar-sublinks li a.active {
+    color: var(--kb-primary) !important;
+    font-weight: 700 !important;
+    border-left-color: var(--kb-primary) !important;
+    background-color: var(--kb-neutral-100) !important;
+}
+
+/* Dynamically injected Breadcrumbs */
+.kb-breadcrumb {
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+    color: var(--kb-neutral-700) !important;
+}
+
+.kb-breadcrumb a {
+    color: var(--kb-primary-light) !important;
+    text-decoration: none !important;
+    transition: color 0.15s ease !important;
+}
+
+.kb-breadcrumb a:hover {
+    color: var(--kb-secondary) !important;
+    text-decoration: underline !important;
+}
+
+/* Local Instant Search elements */
+#kbLocalSearch {
+    height: 48px !important;
+    font-size: 0.98rem !important;
+    color: var(--kb-neutral-900) !important;
+    background-color: #ffffff !important;
+    border: 1px solid var(--kb-neutral-300) !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+}
+
+#kbLocalSearch:focus {
+    border-color: var(--kb-primary) !important;
+    box-shadow: 0 0 0 3px rgba(15, 30, 54, 0.08) !important;
+}
+
+#searchSuggestions {
+    background-color: #ffffff !important;
+    border: 1px solid var(--kb-neutral-200) !important;
+    border-radius: 8px !important;
+    margin-top: 4px !important;
+    overflow: hidden !important;
+    width: 100% !important;
+}
+
+#searchSuggestions .suggestion-item.active {
+    background-color: var(--kb-neutral-100) !important;
+    color: var(--kb-primary) !important;
+    font-weight: 700 !important;
+}
+
+/* Match Highlights */
+mark.highlight {
+    background-color: #fef08a !important;
+    color: #854d0e !important;
+    font-weight: 700 !important;
+    padding: 2px 4px !important;
+    border-radius: 4px !important;
+}
+
+/* Responsive Table customizations inside Content Shell */
+.table-responsive {
+    border-radius: 8px !important;
+    border: 1px solid var(--kb-neutral-200) !important;
+    margin-bottom: 1.5rem !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+.table-responsive::-webkit-scrollbar {
+    height: 6px !important;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: var(--kb-neutral-50) !important;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: var(--kb-neutral-300) !important;
+    border-radius: 3px !important;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: var(--kb-neutral-700) !important;
+}
+
+/* Injected Premium Page Titles */
+.main-heading {
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    position: relative !important;
+}
+
+.main-heading::after {
+    content: '' !important;
+    display: block !important;
+    width: 60px !important;
+    height: 4px !important;
+    background-color: var(--kb-secondary) !important;
+    margin: 12px auto 0 auto !important;
+    border-radius: 2px !important;
+}
+
+/* Mobile Drawer navigation modal override */
+#kbMobileDrawer .modal-content {
+    border-radius: var(--kb-radius) var(--kb-radius) 0 0 !important;
+    border: none !important;
+}
+
+#kbMobileDrawer .accordion-button {
+    font-size: 1rem !important;
+    padding: 12px 16px !important;
+}
+
+/* Form controls/buttons custom states */
+#msform .form-control,
+#msform select,
+#msform input[type="text"] {
+    border-color: var(--kb-neutral-300) !important;
+}
+
+#msform .form-control:focus,
+#msform select:focus,
+#msform input[type="text"]:focus {
+    border-color: var(--kb-primary) !important;
+    box-shadow: 0 0 0 3px rgba(15, 30, 54, 0.08) !important;
+}
+
+.btn-premium {
+    background-color: var(--kb-primary) !important;
+    border-color: var(--kb-primary) !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-premium:hover {
+    background-color: var(--kb-primary-light) !important;
+    border-color: var(--kb-primary-light) !important;
+    transform: translateY(-1px) !important;
+}

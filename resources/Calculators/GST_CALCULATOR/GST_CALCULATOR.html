@@ -1061,7 +1061,8 @@ setTimeout("curTime()",1000)
 
 /* Table styling for Desktop */
 .gst-modern-table {
-    width: 100%;
+    width: 100% !important;
+    min-width: auto !important; /* Force override of runtime DOM transformer 1000px limit */
     border-collapse: separate;
     border-spacing: 0;
     margin-bottom: 2rem;
@@ -1243,12 +1244,34 @@ setTimeout("curTime()",1000)
 
 /* Responsive design - Mobile layout */
 @media (max-width: 991px) {
+    .calc-wrapper {
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .gst-calc-container {
+        padding: 0 !important;
+    }
+    
+    .calc-header-banner {
+        border-radius: 12px !important;
+        margin-bottom: 1.5rem !important;
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .calc-header-banner h2 {
+        font-size: 1.75rem !important;
+    }
+
     .gst-modern-table, 
     .gst-modern-table tbody, 
     .gst-modern-table tr, 
     .gst-modern-table td {
         display: block !important;
         width: 100% !important;
+        min-width: auto !important; /* Prevent parent table expansion */
     }
     
     .gst-modern-table thead {

@@ -1111,19 +1111,43 @@ body.kb-page .active-tab {
 /* Modern responsive grid layout for directory indexes (Quick Links, Important Links, etc.) */
 .inner-icon-ul, .inner-ul {
     display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
     gap: var(--kb-space-md, 16px) !important;
     list-style: none !important;
     padding: 0 !important;
-    margin: var(--kb-space-lg, 24px) auto !important;
+    margin: var(--kb-space-lg, 24px) 0 !important;
     text-align: left !important;
     width: 100% !important;
-    max-width: 900px !important; /* Centers and limits width on desktop */
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Desktop (≥ 1200px): 3 cards per row */
+@media (min-width: 1200px) {
+    .inner-icon-ul, .inner-ul {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* Tablet (992px - 1199.98px): 2 cards per row */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .inner-icon-ul, .inner-ul {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Mobile & Tablet (below 992px): 1 card per row (single-column layout) */
+@media (max-width: 991.98px) {
+    .inner-icon-ul, .inner-ul {
+        grid-template-columns: 1fr !important;
+        margin: var(--kb-space-md, 16px) auto !important;
+    }
 }
 
 .inner-icon-ul li, .inner-ul li {
     margin: 0 !important;
     padding: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .inner-icon-ul li a, .inner-ul li a {
@@ -1143,6 +1167,8 @@ body.kb-page .active-tab {
     transition: all 0.2s ease !important;
     min-height: 72px !important;
     height: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .inner-icon-ul li a:hover, .inner-ul li a:hover {
@@ -1153,12 +1179,11 @@ body.kb-page .active-tab {
     box-shadow: var(--kb-shadow-md, 0 4px 12px rgba(15,30,54,0.08)) !important;
 }
 
-/* Force single-column stacking for mobile viewports to prevent overflow cutoff */
-@media (max-width: 767.98px) {
-    .inner-icon-ul, .inner-ul {
-        grid-template-columns: 1fr !important;
-        margin: var(--kb-space-md, 16px) auto !important;
-    }
+/* Prevent horizontal page overflow on containers */
+.kb-content-area, .kb-card {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
 }
 
 /* Prevent legacy wrapper tables from causing horizontal page layout expansion on mobile */

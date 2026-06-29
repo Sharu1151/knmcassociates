@@ -2261,9 +2261,11 @@ ul.inner-icon-ul li a:hover {
     }
 }
 
-/* Justify introduction narrative text on home page and about page with clean automatic hyphenation to prevent word gaps */
+/* Justify introduction narrative text and subpage body paragraphs with clean hyphenation */
 .work-text p,
-.about-profile p {
+.main-table p,
+.main-table .fs-5,
+.main-table .fs-6 {
     text-align: justify !important;
     hyphens: auto !important;
     -webkit-hyphens: auto !important;
@@ -2271,10 +2273,20 @@ ul.inner-icon-ul li a:hover {
 }
 
 @media (max-width: 767.98px) {
-    .work-text p,
-    .about-profile p {
+    .work-text p {
         font-size: 0.9rem !important;
         line-height: 1.6 !important;
+    }
+    
+    .main-table p,
+    .main-table .fs-5 {
+        font-size: 1.05rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    .main-table .fs-6 {
+        font-size: 0.92rem !important;
+        line-height: 1.55 !important;
     }
 }
 

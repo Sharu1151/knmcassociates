@@ -147,11 +147,11 @@ header,
 
 /* Premium Homepage Elements */
 .intro-head {
-    min-height: 95vh !important;
+    min-height: 75vh !important;
     display: flex;
     align-items: center;
-    padding-top: 120px !important;
-    padding-bottom: 60px !important;
+    padding-top: 100px !important;
+    padding-bottom: 40px !important;
     background:
         linear-gradient(135deg, rgba(8, 16, 29, 0.82) 0%, rgba(15, 30, 54, 0.75) 50%, rgba(8, 16, 29, 0.88) 100%),
         url('../image/background.png') center center / cover no-repeat !important;
@@ -172,7 +172,7 @@ header,
 }
 
 .top-section {
-    padding: 10% 0 !important;
+    padding: 20px 0 !important;
     color: #FFF !important;
     z-index: 2;
 }

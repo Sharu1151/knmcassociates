@@ -38,7 +38,7 @@
                         <span>Chartered Accountants</span>
                         KNMC &amp; Associates
                     </h1>
-                    <p style="font-size: 1.15rem;">
+                    <p style="font-size: 1.15rem; max-width: 580px;">
                         Delivering world-class auditing, tax advisory, corporate finance, and business compliance consultancy. We translate specialized financial skills into proactive advisory.
                     </p>
                     <div class="hero-actions mt-4">
@@ -47,10 +47,85 @@
                     </div>
                 </div>
                 
-                <!-- Right Hero Graphic Column -->
-                <div class="col-lg-6 col-12 reveal reveal-right delay-2 text-center text-lg-end">
-                    <div class="hero-graphic-wrapper">
-                        <img src="image/hero-dashboard.png" alt="KNMC Financial Dashboard" class="img-fluid rounded-4 shadow-lg hero-dashboard-img">
+                <!-- Right Column: Interactive Financial & Compliance Console -->
+                <div class="col-lg-6 col-12 reveal reveal-right delay-2">
+                    <div class="interactive-console">
+                        <!-- Console Header Tabs -->
+                        <div class="console-tabs">
+                            <button class="console-tab-btn active" onclick="switchConsoleTab('deadlines')">
+                                <i class="fa fa-calendar-check-o"></i> Deadlines
+                            </button>
+                            <button class="console-tab-btn" onclick="switchConsoleTab('tax-calc')">
+                                <i class="fa fa-calculator"></i> Tax Estimator
+                            </button>
+                            <button class="console-tab-btn" onclick="switchConsoleTab('acts')">
+                                <i class="fa fa-search"></i> Quick Search
+                            </button>
+                        </div>
+                        
+                        <!-- Console Content Area -->
+                        <div class="console-body">
+                            <!-- Tab 1: Deadlines -->
+                            <div id="console-tab-deadlines" class="console-tab-content active">
+                                <h5 class="console-title">Upcoming Statutory Deadlines (FY 2026-27)</h5>
+                                <ul class="deadline-list">
+                                    <li class="deadline-item">
+                                        <div class="deadline-info">
+                                            <span class="deadline-name">GSTR-1 GST Return</span>
+                                            <span class="deadline-date">July 11, 2026</span>
+                                        </div>
+                                        <span class="badge badge-warning">12 Days Left</span>
+                                    </li>
+                                    <li class="deadline-item">
+                                        <div class="deadline-info">
+                                            <span class="deadline-name">Income Tax Filing (ITR)</span>
+                                            <span class="deadline-date">July 31, 2026</span>
+                                        </div>
+                                        <span class="badge badge-danger">Urgent</span>
+                                    </li>
+                                    <li class="deadline-item">
+                                        <div class="deadline-info">
+                                            <span class="deadline-name">GSTR-3B Payment</span>
+                                            <span class="deadline-date">August 20, 2026</span>
+                                        </div>
+                                        <span class="badge badge-info">Upcoming</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Tab 2: Tax Estimator -->
+                            <div id="console-tab-tax-calc" class="console-tab-content">
+                                <h5 class="console-title">Quick Tax Estimator (FY 2026-27)</h5>
+                                <div class="tax-calculator-form mt-3">
+                                    <label class="form-label d-flex justify-content-between">
+                                        <span>Annual Gross Salary / Income:</span>
+                                        <span class="fw-bold text-accent" id="tax-income-val">₹ 15,00,000</span>
+                                    </label>
+                                    <input type="range" class="form-range" min="300000" max="5000000" step="50000" value="1500000" id="tax-income-slider" oninput="calculateHeroTax()">
+                                    
+                                    <div class="tax-result-card mt-3">
+                                        <div class="tax-result-row">
+                                            <span class="tax-lbl">Estimated Income Tax:</span>
+                                            <span class="tax-val text-success" id="hero-tax-amount">₹ 1,30,000</span>
+                                        </div>
+                                        <div class="tax-result-row sub-row">
+                                            <span class="tax-lbl">Effective Tax Rate:</span>
+                                            <span class="tax-val" id="hero-tax-rate">8.67%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Tab 3: Quick Search -->
+                            <div id="console-tab-acts" class="console-tab-content">
+                                <h5 class="console-title">Instant Statutory Acts Directory</h5>
+                                <p class="small text-muted mb-3">Instantly search key direct &amp; indirect tax acts, company laws, and rules.</p>
+                                <div class="search-input-wrapper">
+                                    <input type="text" class="form-control console-search" id="heroActsSearch" placeholder="Type Act name (e.g. Income Tax, GST, Companies...)" onkeyup="searchHeroActs()">
+                                    <ul class="console-search-results" id="heroSearchSuggestions"></ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -296,5 +371,109 @@
     <!-- Scripts -->
     <script src="usercss/apopper.min.js"></script>
     <script src="usercss/bootstrap.min.js"></script>
+    
+    <!-- Interactive Hero Console Logic -->
+    <script>
+        function switchConsoleTab(tabName) {
+            document.querySelectorAll('.console-tab-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll('.console-tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            const targetContent = document.getElementById('console-tab-' + tabName);
+            if (targetContent) targetContent.classList.add('active');
+            
+            // Highlight active tab button
+            const clickedBtn = Array.from(document.querySelectorAll('.console-tab-btn')).find(btn => 
+                btn.getAttribute('onclick').includes(tabName)
+            );
+            if (clickedBtn) clickedBtn.classList.add('active');
+        }
+
+        function calculateHeroTax() {
+            const slider = document.getElementById('tax-income-slider');
+            const incomeVal = document.getElementById('tax-income-val');
+            const taxValEl = document.getElementById('hero-tax-amount');
+            const rateValEl = document.getElementById('hero-tax-rate');
+            
+            if (!slider || !incomeVal) return;
+            
+            const income = parseInt(slider.value);
+            incomeVal.innerText = '₹ ' + income.toLocaleString('en-IN');
+            
+            let tax = 0;
+            // FY 2026-27 New Tax Regime slabs
+            if (income <= 300000) {
+                tax = 0;
+            } else if (income <= 700000) {
+                tax = (income - 300000) * 0.05;
+            } else if (income <= 1000000) {
+                tax = 20000 + (income - 700000) * 0.10;
+            } else if (income <= 1200000) {
+                tax = 50000 + (income - 1000000) * 0.15;
+            } else if (income <= 1500000) {
+                tax = 80000 + (income - 1200000) * 0.20;
+            } else {
+                tax = 140000 + (income - 1500000) * 0.30;
+            }
+            
+            const totalTax = tax * 1.04; // 4% Cess
+            taxValEl.innerText = '₹ ' + Math.round(totalTax).toLocaleString('en-IN');
+            rateValEl.innerText = ((totalTax / income) * 100).toFixed(2) + '%';
+        }
+
+        function searchHeroActs() {
+            const query = document.getElementById('heroActsSearch').value.trim().toLowerCase();
+            const listEl = document.getElementById('heroSearchSuggestions');
+            if (!listEl) return;
+            
+            listEl.innerHTML = '';
+            
+            if (query.length < 2) {
+                listEl.classList.remove('active');
+                return;
+            }
+            
+            const resources = [
+                { title: "Income Tax Act, 1961", url: "laws/-26/Income_Tax_Act.html" },
+                { title: "Companies Act, 2013", url: "laws/-12/Companies_Act_2013.html" },
+                { title: "Central GST Act, 2017", url: "laws/-164/Central_Goods_and_Services_Tax_Act_2017.html" },
+                { title: "Integrated GST Act, 2017", url: "laws/-217/Integrated_Goods_and_Services_Tax_Act_2017.html" },
+                { title: "Partnership Act, 1932", url: "laws/-106/The_Indian_Partnership_Act,_1932.html" },
+                { title: "FEMA, 1999", url: "laws/-36/Foreign_Exchange_Management_Act_1999.html" }
+            ];
+            
+            const filtered = resources.filter(res => res.title.toLowerCase().includes(query));
+            
+            if (filtered.length === 0) {
+                listEl.innerHTML = '<li class="p-2 text-center text-muted small">No acts found</li>';
+                listEl.classList.add('active');
+                return;
+            }
+            
+            filtered.slice(0, 5).forEach(res => {
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="resource/${res.url}" class="d-block p-2 text-decoration-none border-bottom">${res.title}</a>`;
+                listEl.appendChild(li);
+            });
+            listEl.classList.add('active');
+        }
+
+        // Hide suggestions on click outside
+        document.addEventListener('click', function(e) {
+            const listEl = document.getElementById('heroSearchSuggestions');
+            const searchInput = document.getElementById('heroActsSearch');
+            if (listEl && searchInput && !searchInput.contains(e.target) && !listEl.contains(e.target)) {
+                listEl.classList.remove('active');
+            }
+        });
+        
+        // Initial Calculation
+        window.addEventListener('DOMContentLoaded', () => {
+            calculateHeroTax();
+        });
+    </script>
 </body>
 </html>

@@ -2220,29 +2220,229 @@ ul.inner-icon-ul li a:hover {
     text-align: justify !important;
 }
 
-/* Hero Dashboard Graphic Animations & Effects */
-.hero-graphic-wrapper {
-    position: relative;
-    display: inline-block;
-    padding: 10px;
-    background: linear-gradient(135deg, rgba(197, 168, 128, 0.15) 0%, rgba(15, 30, 54, 0.08) 100%);
-    border-radius: 24px;
-    border: 1px solid rgba(197, 168, 128, 0.22);
+/* Interactive Hero Console CSS */
+.interactive-console {
+    background: rgba(15, 30, 54, 0.45) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-radius: 20px;
+    border: 1px solid rgba(197, 168, 128, 0.25);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
-    animation: floatDashboard 6s ease-in-out infinite;
-    max-width: 100%;
+    overflow: hidden;
+    color: #FFF;
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: left;
 }
 
-.hero-dashboard-img {
-    border: 1px solid rgba(255, 255, 255, 0.08);
+.console-tabs {
+    display: flex;
+    background: rgba(8, 16, 29, 0.6);
+    border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+}
+
+.console-tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 12px 8px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.console-tab-btn:hover {
+    color: #FFF;
+    background: rgba(197, 168, 128, 0.05);
+}
+
+.console-tab-btn.active {
+    color: var(--primary-accent);
+    background: rgba(197, 168, 128, 0.1);
+    border-bottom: 2px solid var(--primary-accent);
+}
+
+.console-body {
+    padding: 24px;
+    min-height: 240px;
+}
+
+.console-tab-content {
+    display: none;
+}
+
+.console-tab-content.active {
     display: block;
-    max-width: 100%;
-    height: auto;
-    border-radius: 16px;
+    animation: fadeInConsole 0.3s ease;
 }
 
-@keyframes floatDashboard {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+@keyframes fadeInConsole {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.console-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #FFF;
+    margin-bottom: 16px;
+    border-left: 3px solid var(--primary-accent);
+    padding-left: 10px;
+}
+
+/* Deadlines list */
+.deadline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.deadline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.deadline-item:last-child {
+    border-bottom: none;
+}
+
+.deadline-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.deadline-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #FFF;
+}
+
+.deadline-date {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 2px;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge-warning {
+    background: rgba(255, 193, 7, 0.15);
+    color: #ffc107;
+}
+
+.badge-danger {
+    background: rgba(220, 53, 69, 0.15);
+    color: #dc3545;
+}
+
+.badge-info {
+    background: rgba(23, 162, 184, 0.15);
+    color: #17a2b8;
+}
+
+/* Tax Estimator styling */
+.tax-calculator-form .form-range {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.tax-calculator-form .form-range::-webkit-slider-thumb {
+    background: var(--primary-accent) !important;
+}
+
+.tax-income-val {
+    color: var(--primary-accent);
+}
+
+.tax-result-card {
+    background: rgba(8, 16, 29, 0.5);
+    border: 1px solid rgba(197, 168, 128, 0.15);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.tax-result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.tax-result-row.sub-row {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 8px;
+}
+
+/* Search suggestions inside console */
+.search-input-wrapper {
+    position: relative;
+}
+
+.console-search {
+    background: rgba(8, 16, 29, 0.5) !important;
+    border: 1px solid rgba(197, 168, 128, 0.25) !important;
+    color: #FFF !important;
+    padding: 12px 16px !important;
+}
+
+.console-search:focus {
+    border-color: var(--primary-accent) !important;
+    box-shadow: 0 0 10px rgba(197, 168, 128, 0.2) !important;
+}
+
+.console-search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #FFF;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0 0;
+    z-index: 10;
+    display: none;
+    overflow: hidden;
+}
+
+.console-search-results.active {
+    display: block;
+}
+
+.console-search-results li a {
+    color: var(--primary-color) !important;
+    transition: background 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.console-search-results li a:hover {
+    background: #f8fafc !important;
+    color: var(--primary-accent) !important;
+    text-decoration: none !important;
 }

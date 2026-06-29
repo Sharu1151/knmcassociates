@@ -286,62 +286,72 @@ header,
 }
 
 .service-card {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(15, 30, 54, 0.05);
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-soft);
-    transition: var(--transition-smooth);
+    background: #FFFFFF !important;
+    border: 1px solid #e2e8f0 !important;
+    border-top: 3.5px solid var(--primary-color) !important;
+    border-radius: 16px !important;
+    padding: 35px 30px !important;
+    box-shadow: 0 10px 30px rgba(15, 30, 54, 0.02) !important;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
     height: 100%;
 }
 
 .service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-medium);
-    border-color: rgba(197, 168, 128, 0.4);
-    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(15, 30, 54, 0.08) !important;
+    border-top-color: var(--primary-accent) !important;
+    border-color: rgba(197, 168, 128, 0.25) !important;
 }
 
 .service-icon {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(197, 168, 128, 0.1);
-    color: var(--primary-accent);
-    font-size: 24px;
-    border-radius: 6px;
-    margin-bottom: 24px;
-    transition: var(--transition-smooth);
+    width: 52px !important;
+    height: 52px !important;
+    background: rgba(197, 168, 128, 0.08) !important;
+    color: var(--primary-accent) !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(197, 168, 128, 0.2) !important;
+    margin-bottom: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.25rem !important;
+    transition: all 0.3s ease !important;
 }
 
 .service-card:hover .service-icon {
-    background-color: var(--primary-accent);
-    color: var(--primary-color);
+    background: var(--primary-accent) !important;
+    color: var(--primary-color) !important;
+    transform: scale(1.1) rotate(5deg) !important;
+    box-shadow: 0 0 15px rgba(197, 168, 128, 0.3) !important;
 }
 
 .service-card h4 {
-    font-size: 1.35rem;
-    margin-bottom: 16px;
-    font-weight: 600;
+    font-size: 1.25rem !important;
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
 }
 
 .service-card p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 24px;
+    font-size: 0.9rem !important;
+    color: var(--text-muted) !important;
+    line-height: 1.55 !important;
+    margin-bottom: 24px !important;
 }
 
 .service-link {
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--primary-accent);
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    color: var(--primary-accent) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    transition: all 0.25s ease !important;
+    text-decoration: none !important;
+}
+
+.service-card:hover .service-link {
+    color: var(--primary-color) !important;
 }
 
 /* Calculators & Grid Section */

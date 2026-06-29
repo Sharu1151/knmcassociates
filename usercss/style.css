@@ -2261,10 +2261,12 @@ ul.inner-icon-ul li a:hover {
     }
 }
 
-/* Justify introduction narrative text on home page and about page */
-.work-text p,
-.about-profile p {
-    text-align: justify !important;
+/* Justify introduction narrative text on home page and about page on larger viewports only to prevent awkward word gaps on mobile */
+@media (min-width: 768px) {
+    .work-text p,
+    .about-profile p {
+        text-align: justify !important;
+    }
 }
 
 /* Interactive Hero Console CSS */

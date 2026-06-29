@@ -2261,11 +2261,20 @@ ul.inner-icon-ul li a:hover {
     }
 }
 
-/* Justify introduction narrative text on home page and about page on larger viewports only to prevent awkward word gaps on mobile */
-@media (min-width: 768px) {
+/* Justify introduction narrative text on home page and about page with clean automatic hyphenation to prevent word gaps */
+.work-text p,
+.about-profile p {
+    text-align: justify !important;
+    hyphens: auto !important;
+    -webkit-hyphens: auto !important;
+    -ms-hyphens: auto !important;
+}
+
+@media (max-width: 767.98px) {
     .work-text p,
     .about-profile p {
-        text-align: justify !important;
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
     }
 }
 

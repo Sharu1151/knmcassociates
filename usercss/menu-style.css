@@ -303,7 +303,7 @@ body.intro-head-active header.smart-header.scrolled .nav-link {
         display: flex !important;
         flex-direction: column !important;
         gap: 12px !important;
-        align-items: flex-start !important;
+        align-items: center!important;
         width: 100% !important;
         margin-top: 24px !important;
     }

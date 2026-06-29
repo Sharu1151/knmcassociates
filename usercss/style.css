@@ -2487,3 +2487,81 @@ ul.inner-icon-ul li a:hover {
     color: var(--primary-accent) !important;
     text-decoration: none !important;
 }
+
+/* --- Premium Aim/Quickcards Redesign --- */
+.aim {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    background-color: #f8fafc !important;
+}
+
+.aim .service-card {
+    background: #FFFFFF !important;
+    border: 1px solid #e2e8f0 !important;
+    border-top: 3px solid var(--primary-color) !important;
+    border-radius: 16px !important;
+    padding: 35px 30px !important;
+    box-shadow: 0 10px 30px rgba(15, 30, 54, 0.02) !important;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.aim .service-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(15, 30, 54, 0.08) !important;
+    border-top-color: var(--primary-accent) !important;
+    border-color: rgba(197, 168, 128, 0.25) !important;
+}
+
+.aim .service-icon {
+    width: 52px !important;
+    height: 52px !important;
+    background: rgba(197, 168, 128, 0.08) !important;
+    color: var(--primary-accent) !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(197, 168, 128, 0.2) !important;
+    margin-bottom: 20px !important;
+}
+
+.aim .service-card:hover .service-icon {
+    background: var(--primary-accent) !important;
+    color: var(--primary-color) !important;
+    transform: scale(1.1) rotate(5deg) !important;
+    box-shadow: 0 0 15px rgba(197, 168, 128, 0.3) !important;
+}
+
+.aim .service-card h4 {
+    font-size: 1.25rem !important;
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+}
+
+.aim .service-card p {
+    font-size: 0.9rem !important;
+    color: var(--text-muted) !important;
+    line-height: 1.55 !important;
+    margin-bottom: 24px !important;
+}
+
+.aim .service-link {
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    color: var(--primary-accent) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    transition: all 0.25s ease !important;
+    text-decoration: none !important;
+}
+
+.aim .service-card:hover .service-link {
+    color: var(--primary-color) !important;
+}
+
+.aim .service-link i {
+    transition: transform 0.2s ease !important;
+}
+
+.aim .service-link:hover i {
+    transform: translateX(4px) !important;
+}

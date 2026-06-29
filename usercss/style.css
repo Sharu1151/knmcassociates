@@ -963,13 +963,11 @@ tr:hover td {
     text-align: left;
 }
 
-/* Custom premium section divider line */
-.section-title-divider {
-    width: 60px;
-    height: 3px;
-    background: var(--primary-accent);
-    margin: 16px 0 24px 0;
-    border-radius: 2px;
+/* Align section title line to the left for text-start headings */
+.head-section.text-start h2::after {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    margin-top: 16px !important;
 }
 
 /* Text highlights */

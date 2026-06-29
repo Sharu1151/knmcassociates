@@ -2165,6 +2165,20 @@ ul.inner-icon-ul li a:hover {
     }
 }
 
+/* Centered Hero actions container layout (Desktop) */
+.hero-actions {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+    margin-top: 32px !important;
+}
+
+.hero-actions a {
+    margin: 0 !important;
+}
+
 /* Hero section mobile centering alignment overrides */
 @media (max-width: 991.98px) {
     .top-section {
@@ -2182,20 +2196,20 @@ ul.inner-icon-ul li a:hover {
     }
 
     .hero-actions {
-        text-align: center !important;
-        display: block !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
     }
 
     .hero-actions a {
         display: block !important;
         width: 100% !important;
         max-width: 340px !important;
-        margin: 12px auto !important;
+        margin: 0 !important;
         text-align: center !important;
         justify-content: center !important;
         box-sizing: border-box !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
     }
 }
 

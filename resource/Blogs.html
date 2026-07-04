@@ -23,6 +23,27 @@
             justify-content: center;
             margin-bottom: 40px;
         }
+        @media (max-width: 767.98px) {
+            .filter-pills {
+                justify-content: flex-start !important;
+                overflow-x: auto !important;
+                white-space: nowrap !important;
+                flex-wrap: nowrap !important;
+                padding: 5px 20px 15px 20px !important;
+                margin-left: -20px !important;
+                margin-right: -20px !important;
+                scroll-behavior: smooth !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+            .filter-pills::-webkit-scrollbar {
+                display: none !important;
+            }
+            .filter-btn {
+                flex-shrink: 0 !important;
+                padding: 6px 18px !important;
+                font-size: 0.85rem !important;
+            }
+        }
         .filter-btn {
             background: #FFFFFF;
             border: 1.5px solid #e2e8f0;

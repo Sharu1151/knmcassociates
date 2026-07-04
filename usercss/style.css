@@ -112,7 +112,7 @@ header,
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000 !important;
+    z-index: 99999 !important;
     background: var(--glass-bg) !important;
     backdrop-filter: var(--glass-blur) !important;
     -webkit-backdrop-filter: var(--glass-blur) !important;
@@ -2810,4 +2810,18 @@ ul.inner-icon-ul li a:hover {
     margin-bottom: 10px !important;
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important;
+}
+
+@media (max-width: 767.98px) {
+    .side-blog-card {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 15px !important;
+        padding: 20px !important;
+    }
+    .side-blog-card .img-wrapper {
+        width: 100% !important;
+        height: 180px !important;
+        border-radius: 12px !important;
+    }
 }

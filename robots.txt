@@ -1,0 +1,8 @@
+# robots.txt for knmcassociates.com
+# Allowing standard search engines and AI agents
+
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://knmcassociates.com/sitemap.xml

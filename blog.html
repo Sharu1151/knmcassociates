@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="rewritten" content="true">
+    <title>Latest Tax & Financial Insights | Blog | KNMC & Associates</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Stay updated on changes in Indian direct tax laws, central excise amendments, corporate filing schedules, and commercial compliance guidelines." />
+    <meta name="keywords" content="Indian tax updates, finance blog, regulatory amendments 2026, GST compliance blogs" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://knmcassociates.com/blog.html" />
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Latest Tax & Financial Insights | Blog | KNMC & Associates" />
+    <meta property="og:description" content="Stay updated on changes in Indian direct tax laws, central excise amendments, corporate filing schedules, and commercial compliance guidelines." />
+    <meta property="og:image" content="https://knmcassociates.com/assets/images/web-logo.png" />
+    <meta property="og:url" content="https://knmcassociates.com/blog.html" />
+    <meta property="og:site_name" content="KNMC & Associates" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Latest Tax & Financial Insights | Blog | KNMC & Associates" />
+    <meta name="twitter:description" content="Stay updated on changes in Indian direct tax laws, central excise amendments, corporate filing schedules, and commercial compliance guidelines." />
+    <meta name="twitter:image" content="https://knmcassociates.com/assets/images/web-logo.png" />
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    
+    <!-- Shared Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/menu-style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.min.css" />
+
+    <!-- Local Blog Custom Styles -->
+    <style>
+        .filter-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 767.98px) {
+            .filter-pills {
+                justify-content: flex-start !important;
+                overflow-x: auto !important;
+                flex-wrap: nowrap !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 10px 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+            .filter-pills::-webkit-scrollbar {
+                display: none !important;
+            }
+            .filter-btn {
+                flex-shrink: 0 !important;
+                padding: 8px 18px !important;
+                font-size: 0.85rem !important;
+            }
+        }
+        .filter-btn {
+            background: #FFFFFF;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 30px;
+            padding: 8px 24px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: #FFFFFF;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(15, 30, 54, 0.15);
+        }
+        
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 35px auto;
+        }
+        .search-input-group {
+            position: relative;
+            box-shadow: var(--shadow-soft);
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1.5px solid #e2e8f0;
+            transition: var(--transition-smooth);
+            background: #FFFFFF;
+        }
+        .search-input-group:focus-within {
+            border-color: var(--primary-accent);
+            box-shadow: 0 8px 30px rgba(197, 168, 128, 0.18);
+        }
+        .search-input-group .search-input {
+            border: none;
+            padding: 16px 25px 16px 55px !important;
+            width: 100%;
+            outline: none;
+            font-size: 1rem;
+            color: var(--text-main);
+            background: transparent !important;
+        }
+        .search-icon {
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.25rem;
+        }
+
+        .featured-blog-card {
+            background: #FFFFFF;
+            border: 1px solid #e2e8f0;
+            border-left: 5px solid var(--primary-accent);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition-smooth);
+            margin-bottom: 55px;
+        }
+        .featured-blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(15, 30, 54, 0.08);
+        }
+        .featured-image-wrapper {
+            height: 100%;
+            min-height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        .featured-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+        .featured-blog-card:hover .featured-image {
+            transform: scale(1.03);
+        }
+
+        .blog-card {
+            background: #FFFFFF;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+            border-color: rgba(197, 168, 128, 0.25);
+        }
+        .blog-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 220px;
+            background-color: var(--bg-secondary);
+        }
+        .blog-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .blog-card:hover .blog-image {
+            transform: scale(1.06);
+        }
+        .blog-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: #FFFFFF;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1.5px solid var(--primary-accent);
+            letter-spacing: 0.03em;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .blog-content {
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .blog-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            display: flex;
+            gap: 15px;
+            font-weight: 500;
+        }
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .blog-meta i {
+            color: var(--primary-accent);
+        }
+        .blog-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+        .blog-card:hover .blog-title {
+            color: var(--primary-accent);
+        }
+        .blog-excerpt {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .blog-footer {
+            margin-top: auto;
+            border-top: 1px solid rgba(15, 30, 54, 0.06);
+            padding-top: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #172b4d 100%);
+            border-radius: 20px;
+            padding: 50px;
+            color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+        }
+        .newsletter-section .form-control {
+            border-radius: 30px;
+            padding: 15px 25px;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.06);
+            color: #FFFFFF;
+            backdrop-filter: blur(10px);
+        }
+        .newsletter-section .form-control::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+        .newsletter-section .form-control:focus {
+            background: rgba(255,255,255,0.12);
+            border-color: var(--primary-accent);
+            box-shadow: none;
+        }
+        .newsletter-btn {
+            background: var(--primary-accent);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 30px;
+            padding: 15px 35px;
+            font-weight: 700;
+            transition: var(--transition-smooth);
+        }
+        .newsletter-btn:hover {
+            background: #FFFFFF;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(197, 168, 128, 0.4);
+        }
+    </style>
+</head>
+<body class="">
+    <div id="preloader"><div class="loader-wrapper"><div class="loader-graphic"><div class="spinner-ring"><div></div><div></div></div><div class="loader-logo"><span class="logo-text">CA</span></div></div><h2 class="loader-title">KNMC</h2><p class="loader-subtitle">Associates</p><div class="loader-bar-container"><div class="loader-bar"></div></div><p class="loader-status">Chartered Accountants</p></div></div>
+
+    <!-- Global Header Placeholder -->
+    <div id="global-header-marker"></div>
+
+    <!-- Inner Page Header -->
+    <section class="innr-pg-c">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="kb-breadcrumb mb-2">
+                        <a href="index.html">Home</a> &gt; <span>Blogs</span>
+                    </div>
+                    <h1>Blogs &amp; Insights</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main class="container py-5">
+        
+        <!-- Live Search Bar -->
+        <div class="search-container reveal">
+            <div class="search-input-group">
+                <i class="fa fa-search search-icon"></i>
+                <input type="text" id="blogSearch" class="search-input" placeholder="Search insights, tax updates, and guidelines..." onkeyup="filterBlogs()">
+            </div>
+        </div>
+
+        <!-- Filter Category Pills -->
+        <div class="filter-pills reveal">
+            <button class="filter-btn active" onclick="setCategory('All', this)">All Insights</button>
+            <button class="filter-btn" onclick="setCategory('Tax Advisory', this)">Tax Advisory</button>
+            <button class="filter-btn" onclick="setCategory('Corporate Law', this)">Corporate Law</button>
+            <button class="filter-btn" onclick="setCategory('Audit & Assurance', this)">Audit &amp; Assurance</button>
+            <button class="filter-btn" onclick="setCategory('Compliance Alerts', this)">Compliance Alerts</button>
+        </div>
+
+        <!-- Featured Post Card (GST Update) -->
+        <div class="featured-blog-card reveal blog-post-item" data-category="Compliance Alerts">
+            <div class="row g-0">
+                <div class="col-lg-6 col-12">
+                    <div class="featured-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80" class="featured-image" alt="Featured Budget Reforms">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 d-flex flex-column justify-content-center">
+                    <div class="blog-content p-4 p-md-5">
+                        <div class="blog-meta">
+                            <span><i class="fa fa-calendar"></i> July 04, 2026</span>
+                            <span><i class="fa fa-clock-o"></i> 6 min read</span>
+                            <span><i class="fa fa-tag"></i> Compliance Alerts</span>
+                        </div>
+                        <h2 class="blog-title fs-2 mb-3"><a href="#" onclick="alert('Article reading view coming soon!')">Union Budget FY 2026-27: Critical Tax Amendments &amp; Direct Surcharges Explained</a></h2>
+                        <p class="blog-excerpt text-muted mb-4">
+                            An analytical deep-dive into the newly table reforms, corporate tax rate restructuring, adjusted capital gains tax slabs, and critical compliance timeline shifts that companies need to execute this financial year.
+                        </p>
+                        <div class="blog-footer border-0 p-0 m-0">
+                            <span class="text-muted small">By <strong>CA K. N. Murthy</strong></span>
+                            <a href="#" onclick="alert('Article reading view coming soon!')" class="service-link">Read Full Analysis <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blogs Cards Grid -->
+        <div class="row g-4 mb-5" id="blogsGrid">
+            
+            <!-- Post 1 -->
+            <div class="col-lg-4 col-md-6 col-12 blog-post-item reveal reveal-scale" data-category="Tax Advisory">
+                <div class="blog-card">
+                    <div class="blog-image-wrapper">
+                        <span class="blog-badge">Tax Advisory</span>
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" class="blog-image" alt="GST Audit">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa fa-calendar"></i> June 28, 2026</span>
+                            <span><i class="fa fa-clock-o"></i> 4 min read</span>
+                        </div>
+                        <h4 class="blog-title"><a href="#" onclick="alert('Article reading view coming soon!')">Navigating GST Audit Protocols: Essential Compliance Checklists</a></h4>
+                        <p class="blog-excerpt">
+                            Learn about GSTR-9 and GSTR-9C filings, reconciliation statements, matching ITC claims, and addressing GST departmental notice rectifications systematically.
+                        </p>
+                        <div class="blog-footer">
+                            <span class="text-muted small">By <strong>Tax Desk Team</strong></span>
+                            <a href="#" onclick="alert('Article reading view coming soon!')" class="service-link">Read Article &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="col-lg-4 col-md-6 col-12 blog-post-item reveal reveal-scale delay-1" data-category="Corporate Law">
+                <div class="blog-card">
+                    <div class="blog-image-wrapper">
+                        <span class="blog-badge">Corporate Law</span>
+                        <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80" class="blog-image" alt="MCA Filings">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa fa-calendar"></i> June 15, 2026</span>
+                            <span><i class="fa fa-clock-o"></i> 5 min read</span>
+                        </div>
+                        <h4 class="blog-title"><a href="#" onclick="alert('Article reading view coming soon!')">MCA V3 Portal Migrations: Transition Challenges and Solutions</a></h4>
+                        <p class="blog-excerpt">
+                            A comprehensive operational walkthrough regarding corporate charge filings, director KYC updates, and error resolutions inside the Ministry of Corporate Affairs V3 ecosystem.
+                        </p>
+                        <div class="blog-footer">
+                            <span class="text-muted small">By <strong>Corporate Advisory</strong></span>
+                            <a href="#" onclick="alert('Article reading view coming soon!')" class="service-link">Read Article &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 3 -->
+            <div class="col-lg-4 col-md-6 col-12 blog-post-item reveal reveal-scale delay-2" data-category="Audit & Assurance">
+                <div class="blog-card">
+                    <div class="blog-image-wrapper">
+                        <span class="blog-badge">Audit &amp; Assurance</span>
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" class="blog-image" alt="Statutory Audit">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa fa-calendar"></i> May 24, 2026</span>
+                            <span><i class="fa fa-clock-o"></i> 5 min read</span>
+                        </div>
+                        <h4 class="blog-title"><a href="#" onclick="alert('Article reading view coming soon!')">Why Early-Stage Startups Benefit from Internal Audit Protocols</a></h4>
+                        <p class="blog-excerpt">
+                            Internal control reviews can prevent structural compliance issues, verify cash runway, reduce legal exposure, and prepare emerging ventures for Series-A institutional funding rounds.
+                        </p>
+                        <div class="blog-footer">
+                            <span class="text-muted small">By <strong>CA K. N. Murthy</strong></span>
+                            <a href="#" onclick="alert('Article reading view coming soon!')" class="service-link">Read Article &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 4 -->
+            <div class="col-lg-4 col-md-6 col-12 blog-post-item reveal reveal-scale" data-category="Compliance Alerts">
+                <div class="blog-card">
+                    <div class="blog-image-wrapper">
+                        <span class="blog-badge">Compliance Alerts</span>
+                        <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80" class="blog-image" alt="FEMA Rules">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa fa-calendar"></i> May 12, 2026</span>
+                            <span><i class="fa fa-clock-o"></i> 7 min read</span>
+                        </div>
+                        <h4 class="blog-title"><a href="#" onclick="alert('Article reading view coming soon!')">FEMA Compliance: Overseas Direct Investments (ODI) Guidelines</a></h4>
+                        <p class="blog-excerpt">
+                            Explore RBI guidelines for domestic entities investing in overseas subsidiaries, reporting schedules, LRS thresholds, and the consequences of non-filing.
+                        </p>
+                        <div class="blog-footer">
+                            <span class="text-muted small">By <strong>Advisory Desk</strong></span>
+                            <a href="#" onclick="alert('Article reading view coming soon!')" class="service-link">Read Article &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 5 -->
+            <div class="col-lg-4 col-md-6 col-12 blog-post-item reveal reveal-scale delay-1" data-category="Tax Advisory">
+                <div class="blog-card">
+                    <div class="blog-image-wrapper">
+                        <span class="blog-badge">Tax Advisory</span>
+                        <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&w=800&q=80" class="blog-image" alt="Non-Resident Indian Tax">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa fa-calendar"></i> April 30, 2026</span>
+                            <span><i class="fa fa-clock-o"></i> 6 min read</span>
+                        </div>
+                        <h4 class="blog-title"><a href="#" onclick="alert('Article reading view coming soon!')">TDS Provisions for NRI Property Transactions under Section 195</a></h4>
+                        <p class="blog-excerpt">
+                            Understanding withholding tax obligations, lower deduction certificates, capital gains computation, and compliance filing sequences for buyers purchasing property from NRIs.
+                        </p>
+                        <div class="blog-footer">
+                            <span class="text-muted small">By <strong>Tax Desk Team</strong></span>
+                            <a href="#" onclick="alert('Article reading view coming soon!')" class="service-link">Read Article &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 6 -->
+            <div class="col-lg-4 col-md-6 col-12 blog-post-item reveal reveal-scale delay-2" data-category="Compliance Alerts">
+                <div class="blog-card">
+                    <div class="blog-image-wrapper">
+                        <span class="blog-badge">Compliance Alerts</span>
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80" class="blog-image" alt="Statutory Audit">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa fa-calendar"></i> April 10, 2026</span>
+                            <span><i class="fa fa-clock-o"></i> 4 min read</span>
+                        </div>
+                        <h4 class="blog-title"><a href="#" onclick="alert('Article reading view coming soon!')">Important Statutory Filing Deadlines for Q1 FY 2026-27</a></h4>
+                        <p class="blog-excerpt">
+                            Keep track of crucial Q1 compliance deadlines: TDS deposits, GSTR returns, advance tax installments, and ROC annual returns to avoid interest penalties.
+                        </p>
+                        <div class="blog-footer">
+                            <span class="text-muted small">By <strong>Compliance Desk</strong></span>
+                            <a href="#" onclick="alert('Article reading view coming soon!')" class="service-link">Read Article &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Newsletter Subscription Box -->
+        <div class="newsletter-section text-center reveal">
+            <h3 class="text-white mb-2 fs-2">Subscribe to Regulatory Updates</h3>
+            <p class="text-white-50 mb-4 mx-auto" style="max-width: 600px;">
+                Get real-time statutory circulars, direct/indirect tax notifications, and finance alerts delivered straight to your inbox.
+            </p>
+            <form onsubmit="event.preventDefault(); alert('Thank you for subscribing to KNMC Insights!'); this.reset();" class="row g-3 justify-content-center">
+                <div class="col-md-5 col-12">
+                    <input type="email" class="form-control" placeholder="Enter your email address" required>
+                </div>
+                <div class="col-md-auto col-12">
+                    <button type="submit" class="newsletter-btn">Subscribe Now</button>
+                </div>
+            </form>
+        </div>
+
+    </main>
+
+    <!-- Global Footer Placeholder -->
+    <div id="global-footer-marker"></div>
+
+    <!-- Shared Scripts -->
+    <script src="assets/js/apopper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js?v=fixed"></script>
+
+    <!-- Real-time Filter & Search Logic -->
+    <script>
+        let currentCategory = 'All';
+
+        function setCategory(category, button) {
+            currentCategory = category;
+            
+            // Highlight active filter pill
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            button.classList.add('active');
+            
+            filterBlogs();
+        }
+
+        function filterBlogs() {
+            const query = document.getElementById('blogSearch').value.trim().toLowerCase();
+            const items = document.querySelectorAll('.blog-post-item');
+            let visibleCount = 0;
+            
+            items.forEach(item => {
+                const category = item.getAttribute('data-category');
+                const title = item.querySelector('.blog-title').innerText.toLowerCase();
+                const excerpt = item.querySelector('.blog-excerpt').innerText.toLowerCase();
+                
+                // Check category matching
+                const matchesCategory = (currentCategory === 'All' || category === currentCategory);
+                
+                // Check search query matching
+                const matchesSearch = (title.includes(query) || excerpt.includes(query));
+                
+                if (matchesCategory && matchesSearch) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Handle no results case
+            let noResultsEl = document.getElementById('noResultsMsg');
+            if (visibleCount === 0) {
+                if (!noResultsEl) {
+                    noResultsEl = document.createElement('div');
+                    noResultsEl.id = 'noResultsMsg';
+                    noResultsEl.className = 'col-12 text-center py-5';
+                    noResultsEl.innerHTML = `
+                        <div class="text-muted">
+                            <i class="fa fa-folder-open-o fs-1 mb-3" style="color: var(--primary-accent);"></i>
+                            <h4>No matching insights found</h4>
+                            <p class="small">Try refining your search terms or selecting a different category.</p>
+                        </div>
+                    `;
+                    document.getElementById('blogsGrid').appendChild(noResultsEl);
+                }
+            } else {
+                if (noResultsEl) {
+                    noResultsEl.remove();
+                }
+            }
+        }
+    </script>
+</body>
+</html>

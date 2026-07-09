@@ -506,11 +506,9 @@
             incomeVal.innerText = '₹ ' + income.toLocaleString('en-IN');
             
             let tax = 0;
-            // FY 2026-27 New Tax Regime slabs
-            if (income <= 300000) {
+            // FY 2026-27 New Tax Regime slabs (with Section 87A rebate: Nil tax up to 7 Lakhs)
+            if (income <= 700000) {
                 tax = 0;
-            } else if (income <= 700000) {
-                tax = (income - 300000) * 0.05;
             } else if (income <= 1000000) {
                 tax = 20000 + (income - 700000) * 0.10;
             } else if (income <= 1200000) {

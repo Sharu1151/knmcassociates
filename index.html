@@ -572,9 +572,87 @@
             }
         });
         
+        function updateDeadlines() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth();
+
+            // 1. GSTR-1: Due on 11th of every month
+            let gstr1Date = new Date(year, month, 11);
+            if (now > gstr1Date) {
+                gstr1Date = new Date(year, month + 1, 11);
+            }
+
+            // 2. Income Tax Filing (ITR): Due on July 31st of every year
+            let itrDate = new Date(year, 6, 31);
+            if (now > itrDate) {
+                itrDate = new Date(year + 1, 6, 31);
+            }
+
+            // 3. GSTR-3B: Due on 20th of every month
+            let gstr3bDate = new Date(year, month, 20);
+            if (now > gstr3bDate) {
+                gstr3bDate = new Date(year, month + 1, 20);
+            }
+
+            const deadlines = [
+                { name: "GSTR-1 GST Return", date: gstr1Date },
+                { name: "Income Tax Filing (ITR)", date: itrDate },
+                { name: "GSTR-3B Payment", date: gstr3bDate }
+            ];
+
+            deadlines.sort((a, b) => a.date - b.date);
+
+            const listEl = document.querySelector('.deadline-list');
+            if (!listEl) return;
+
+            listEl.innerHTML = '';
+
+            const monthNames = ["July", "August", "September", "October", "November", "December", "January", "February", "March", "April", "May", "June"];
+            const realMonthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+            deadlines.forEach(dl => {
+                const diffTime = dl.date - now;
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                
+                let badgeClass = 'badge-info';
+                let badgeText = 'Upcoming';
+
+                if (diffDays <= 3) {
+                    badgeClass = 'badge-danger';
+                    badgeText = 'Urgent';
+                } else if (diffDays <= 15) {
+                    badgeClass = 'badge-warning';
+                    badgeText = `${diffDays} Days Left`;
+                }
+
+                const dateString = `${realMonthNames[dl.date.getMonth()]} ${dl.date.getDate()}, ${dl.date.getFullYear()}`;
+
+                const li = document.createElement('li');
+                li.className = 'deadline-item';
+                li.innerHTML = `
+                    <div class="deadline-info">
+                        <span class="deadline-name">${dl.name}</span>
+                        <span class="deadline-date">${dateString}</span>
+                    </div>
+                    <span class="badge ${badgeClass}">${badgeText}</span>
+                `;
+                listEl.appendChild(li);
+            });
+            
+            const titleEl = document.querySelector('#console-tab-deadlines .console-title');
+            if (titleEl) {
+                const currentMonth = now.getMonth();
+                const fyStart = currentMonth >= 3 ? year : year - 1;
+                const fyEnd = (fyStart + 1).toString().slice(-2);
+                titleEl.textContent = `Upcoming Statutory Deadlines (FY ${fyStart}-${fyEnd})`;
+            }
+        }
+        
         // Initial Calculation
         window.addEventListener('DOMContentLoaded', () => {
             calculateHeroTax();
+            updateDeadlines();
         });
     </script>
 </body>

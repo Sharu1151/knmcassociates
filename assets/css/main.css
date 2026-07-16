@@ -2825,3 +2825,244 @@ ul.inner-icon-ul li a:hover {
         border-radius: 12px !important;
     }
 }
+
+/* Homepage Social Media Section Styles */
+.home-social-section {
+    background-color: #f8fafc !important;
+    padding: 70px 0 !important;
+}
+
+.instagram-card {
+    background: #FFFFFF !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    box-shadow: var(--shadow-soft) !important;
+}
+
+.insta-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--primary-accent);
+    padding: 2px;
+    background: #FFF;
+}
+
+.insta-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.btn-insta-follow {
+    background: var(--primary-color) !important;
+    color: #FFFFFF !important;
+    border: 1.5px solid var(--primary-color) !important;
+    padding: 8px 18px !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    border-radius: 30px !important;
+    transition: var(--transition-smooth) !important;
+    text-decoration: none !important;
+}
+
+.btn-insta-follow:hover {
+    background: transparent !important;
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-insta-follow-large {
+    background: var(--primary-color) !important;
+    color: #FFFFFF !important;
+    border: 1.5px solid var(--primary-color) !important;
+    padding: 10px 24px !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    border-radius: 30px !important;
+    transition: var(--transition-smooth) !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+}
+
+.btn-insta-follow-large:hover {
+    background: transparent !important;
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    transform: translateY(-2px) !important;
+}
+
+.insta-post-link {
+    display: block;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.insta-post-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.insta-post-link .insta-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.4);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    font-size: 0.75rem;
+}
+
+.insta-post-link .play-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.insta-post-link:hover img {
+    transform: scale(1.05);
+}
+
+.insta-post-link:hover .play-badge {
+    background: var(--primary-accent);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.btn-watch-reel {
+    display: inline-block !important;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    color: var(--primary-accent) !important;
+    border: 1px solid var(--primary-accent) !important;
+    padding: 5px 12px !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    transition: var(--transition-smooth) !important;
+    margin-top: 8px !important;
+}
+
+.btn-watch-reel:hover {
+    background-color: var(--primary-accent) !important;
+    color: #FFFFFF !important;
+}
+
+.youtube-card {
+    background: #FFFFFF !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    box-shadow: var(--shadow-soft) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.youtube-wrapper {
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 9 / 16;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    border: 1px solid var(--border-color);
+}
+
+.youtube-wrapper iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-youtube {
+    background: #FF0000 !important;
+    color: #FFFFFF !important;
+    border: 1.5px solid #FF0000 !important;
+    padding: 10px 24px !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    border-radius: 30px !important;
+    transition: var(--transition-smooth) !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+}
+
+.btn-youtube:hover {
+    background: transparent !important;
+    color: #FF0000 !important;
+    border-color: #FF0000 !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-youtube-secondary {
+    background: transparent !important;
+    color: var(--primary-color) !important;
+    border: 1.5px solid var(--border-color) !important;
+    padding: 10px 24px !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    border-radius: 30px !important;
+    transition: var(--transition-smooth) !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+}
+
+.btn-youtube-secondary:hover {
+    background: var(--primary-color) !important;
+    color: #FFFFFF !important;
+    border-color: var(--primary-color) !important;
+    transform: translateY(-2px) !important;
+}
+
+@media (max-width: 991.98px) {
+    .home-social-section {
+        padding: 50px 0 !important;
+    }
+    .youtube-wrapper {
+        max-width: 260px;
+    }
+}
+
+/* Ensure Instagram Embed is fully responsive on mobile screen sizes */
+.instagram-embed-wrapper iframe {
+    min-width: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 12px !important;
+}
+
+@media (max-width: 767.98px) {
+    .home-social-section h2 {
+        font-size: 1.75rem !important;
+        line-height: 1.35 !important;
+    }
+}
+
+
+
